@@ -1,0 +1,10 @@
+
+<raptor-taglib>
+    <uri>app</uri>
+    
+    <import-taglib path="/ui/buttons/Button/Button.rtld"/>
+    <import-taglib path="/ui/search/SearchForm/SearchForm.rtld"/>
+    <import-taglib path="/ui/search/SearchResults/SearchResults.rtld"/>
+    <import-taglib path="/ui/search/SearchResultsContainer/SearchResultsContainer.rtld"/>
+    
+</raptor-taglib>

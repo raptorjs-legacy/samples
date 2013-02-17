@@ -1,0 +1,7 @@
+{
+    "raptor": {
+        "dependencies": [
+            "finding.js"
+        ]
+    }
+}

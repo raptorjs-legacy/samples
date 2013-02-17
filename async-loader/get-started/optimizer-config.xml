@@ -1,0 +1,31 @@
+<optimizer-config>
+    <params>
+        <profile>production</profile>
+    </params>
+    
+    <enable-profile>${profile}</enable-profile>
+    
+    
+    
+    <profile name="development">
+        <enabled-extensions>browser,raptor/logging/console,development</enabled-extensions>
+        <bundling-enabled>false</bundling-enabled>
+        <in-place-deployment-enabled>true</in-place-deployment-enabled>
+        <minify-js>false</minify-js>
+        <minify-css>false</minify-css>
+        <checksums-enabled>false</checksums-enabled>        
+    </profile>
+    
+    <profile name="production">
+        <checksums-enabled>true</checksums-enabled>
+        <enabled-extensions>browser,production</enabled-extensions>
+        <bundling-enabled>false</bundling-enabled>
+        <resolve-css-urls>true</resolve-css-urls>
+        <in-place-deployment-enabled>false</in-place-deployment-enabled>
+        <minify-js>false</minify-js>
+        <minify-css>false</minify-css>
+    </profile>
+    
+    <output-dir>build/static</output-dir>
+    
+</optimizer-config>

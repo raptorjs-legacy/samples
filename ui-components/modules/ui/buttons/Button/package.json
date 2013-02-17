@@ -1,0 +1,10 @@
+{
+    "raptor": {
+        "dependencies": [
+            {"module": "raptor/widgets"},
+            {"module": "bootstrap"},
+            "ButtonWidget.js",
+            "Button.css"
+        ]
+    }
+}

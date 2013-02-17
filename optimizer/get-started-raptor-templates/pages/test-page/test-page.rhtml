@@ -1,0 +1,26 @@
+<c:template
+    xmlns:c="core"
+    xmlns:optimizer="optimizer">
+
+    <optimizer:page name="test-page" base-path=".">
+        <dependencies>
+            <module name="raptor"/>
+            <module name="module-a"/>
+            <module name="module-b"/>
+            <css path="test-page.css"/>
+            <js path="test-page.js"/>
+        </dependencies>
+    </optimizer:page>
+
+    <html>
+        <head>
+            <title>RaptorJS Optimizer Taglib: Hello World</title>
+            <optimizer:slot name="head"/>
+        </head>
+        <body>
+            Hello from the RaptorJS Optimizer Taglib!
+            <optimizer:slot name="body"/>
+        </body>
+    </html>
+
+</c:template>

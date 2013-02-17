@@ -1,0 +1,32 @@
+<c:template
+    xmlns:c="core"
+    xmlns:w="widgets"
+    name="components/buttons/Button"
+    params="id,tag,rootAttrs,label,href">
+    
+    <c:def function="body()">
+        <c:choose>
+            <c:when c:test="label">
+                ${label}
+            </c:when>
+            <c:when c:test="tag.invokeBody">
+                <c:invoke function="tag.invokeBody"/>
+            </c:when>
+        </c:choose>
+        
+        <c:if test="data.isDropdown">
+            ${entity:nbsp}
+            <span class="caret"></span>
+        </c:if>
+    </c:def>
+    
+    <c:choose>
+        <a id="${id}" w:widget="ui/buttons/Button/ButtonWidget" c:attrs="rootAttrs" href="$href" c:when="href">
+            <c:invoke function="body()"/>
+        </a>
+        <button id="${id}" w:widget="ui/buttons/Button/ButtonWidget" c:attrs="rootAttrs" c:otherwise="">
+            <c:invoke function="body()"/>
+        </button>
+    </c:choose>
+
+</c:template>

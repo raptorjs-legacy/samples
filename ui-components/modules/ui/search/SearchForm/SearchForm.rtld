@@ -1,0 +1,3 @@
+<raptor-taglib>
+    <tag name="search-form" renderer="ui/search/SearchForm/SearchFormRenderer"/>
+</raptor-taglib>

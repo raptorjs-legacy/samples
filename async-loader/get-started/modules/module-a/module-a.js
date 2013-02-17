@@ -1,0 +1,1 @@
+document.write('<div class="module-a">Hello from "module-a"!</div>');

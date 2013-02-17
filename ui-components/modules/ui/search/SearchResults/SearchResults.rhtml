@@ -1,0 +1,14 @@
+<c:template name="ui/search/SearchResults" xmlns:w="widgets" xmlns:c="core" params="items">
+    <div class="search-results view-$data.view" w:widget="ui/search/SearchResults/SearchResultsWidget">
+        <div class="search-item" c:for="item in items">
+            <div class="search-item-container drop-shadow">
+                <div class="img-container">
+                    <img src="$item.galleryURL"/>
+                </div>
+                <h4 class="title">
+                    <a href="$item.viewItemURL">$item.title</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</c:template>

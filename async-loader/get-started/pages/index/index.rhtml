@@ -1,0 +1,30 @@
+<c:template
+    xmlns:c="core"
+    xmlns:html="html"
+    xmlns:optimizer="optimizer">
+    
+    <optimizer:page name="index" base-path="${data.outputDir}">
+        <dependencies>
+            <module name="raptor"/>
+            <js path="index.js"/>
+            <css path="index.css"/>
+            <module name="module-a"/>
+            <module name="module-b" async="true"/>
+
+            <!-- Required for asynchronous module loading -->
+            <module name="raptor/loader"/>
+        </dependencies>
+    </optimizer:page>
+    
+    <html html:doctype="html">
+        <head>
+            <title>Async Module Loading Test Page</title>
+            <optimizer:slot name="head"/>
+        </head>
+        <body>
+            <button type="button" onclick="TestPage.loadModuleBAsync()">Load "module-b" Asynchrously</button>
+            <optimizer:slot name="body"/>
+        </body>
+    </html>
+
+</c:template>

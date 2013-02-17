@@ -1,0 +1,18 @@
+<raptor-taglib>
+
+    <tag name="button" renderer="ui/buttons/Button/ButtonRenderer" dynamic-attributes="true">
+        <attribute name="id" type="string"/>
+        <attribute name="label" type="string"/>
+        <attribute name="href" type="string"/>
+        <attribute name="variant" type="string"/>
+        <attribute name="size" type="string"/>
+        <attribute name="toggle" type="boolean"/>
+        <attribute name="toggled" type="boolean"/>
+        <attribute name="dropdown" type="boolean"/>
+        
+        <!-- Support widget attributes -->
+        <attribute name="id" uri="widgets"/>
+        <attribute name="event-click" uri="widgets"/>
+    </tag>
+    
+</raptor-taglib>

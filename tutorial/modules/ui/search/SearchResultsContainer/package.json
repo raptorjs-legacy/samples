@@ -1,0 +1,10 @@
+{
+    "raptor": {
+        "dependencies": [
+            { "module": "raptor/component-renderer" },
+            { "module": "ui/search/SearchResults" },
+            "SearchResultsContainerWidget.js",
+            "SearchResultsContainer.css"
+        ]
+    }
+}

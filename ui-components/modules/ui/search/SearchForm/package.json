@@ -1,0 +1,11 @@
+{
+    "raptor": {
+        "dependencies": [
+            { "module": "raptor/pubsub" },
+            { "module": "ebay-api/finding" },
+            { "module": "ui/buttons/Button" },
+            "SearchFormWidget.js",
+            "SearchForm.css"
+        ]
+    }
+}

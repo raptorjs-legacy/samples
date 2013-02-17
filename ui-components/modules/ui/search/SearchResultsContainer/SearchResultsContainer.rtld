@@ -1,0 +1,3 @@
+<raptor-taglib>
+    <tag name="search-results-container" renderer="ui/search/SearchResultsContainer/SearchResultsContainerRenderer"/>
+</raptor-taglib>
