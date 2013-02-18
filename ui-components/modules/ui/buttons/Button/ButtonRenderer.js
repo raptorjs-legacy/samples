@@ -2,18 +2,12 @@ define(
     "ui/buttons/Button/ButtonRenderer",
     ['raptor'],
     function(raptor, require) {
-        var ButtonTag = function() {
-            
-        };
-        
-        ButtonTag.prototype = {
-            process: function(input, context) {
+        return {
+            render: function(input, context) {
                 
                 var rootAttrs = {};
                 
                 var classParts = ["btn"];
-                
-                
                 
                 if (input.variant) {                    
                     classParts.push("btn-" + input.variant);
@@ -26,6 +20,9 @@ define(
                 
                 
                 if (input.dynamicAttributes) {
+                    if (input.dynamicAttributes.href) {
+
+                    }
                     var className = input.dynamicAttributes["class"];
                     if (className) {
                         delete input.dynamicAttributes["class"];
@@ -57,6 +54,4 @@ define(
                 }, context);
             }
         };
-        
-        return ButtonTag;
     });

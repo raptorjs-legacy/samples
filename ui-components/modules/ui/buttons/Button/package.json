@@ -2,8 +2,12 @@
     "raptor": {
         "dependencies": [
             {"module": "raptor/widgets"},
+            {"module": "raptor/templating"},
+            {"module": "raptor/templating/taglibs/widgets"},
             {"module": "bootstrap"},
             "ButtonWidget.js",
+            "ButtonRenderer.js",
+            "Button.rhtml",
             "Button.css"
         ]
     }

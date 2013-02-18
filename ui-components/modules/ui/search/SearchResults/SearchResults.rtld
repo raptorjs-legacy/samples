@@ -1,6 +1,0 @@
-<raptor-taglib>
-    <tag name="search-results" renderer="ui/search/SearchResults/SearchResultsRenderer">
-        <attribute name="search-result-items" type="expression"/>
-        <attribute name="view"/>
-    </tag>
-</raptor-taglib>

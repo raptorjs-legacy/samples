@@ -1,0 +1,53 @@
+<c:template
+    xmlns:c="core"
+    xmlns:w="widgets"
+    name="components/buttons/Button"
+    params="id,tag,rootAttrs,label,href"
+    xmlns:app="app">
+    
+    <div w:widget="ui/demo/ComponentsDemo/ComponentsDemoWidget">
+        <h1>Button Showcase:</h1>
+        
+        <h2>Button variants</h2>
+        <app:button label="Default"/>
+        <app:button label="Primary" variant="primary"/>
+        <app:button label="Success" variant="success"/>
+        <app:button label="Warning" variant="warning"/>
+        <app:button label="Danger" variant="danger"/>
+        <app:button label="Inverse" variant="inverse"/>
+        <app:button label="Link" variant="link" href="http://raptorjs.org" target="_blank"/>
+        
+        <h2>Button sizes</h2>
+        <p>
+            <app:button label="Large button" variant="primary" size="large"/>
+            <app:button label="Larget button" size="large"/>    
+        </p>
+        <p>
+            <app:button label="Default button" variant="primary"/>
+            <app:button label="Default button"/>    
+        </p>
+        <p>
+            <app:button label="Small button" variant="primary" size="small"/>
+            <app:button label="Small button" size="small"/>    
+        </p>
+        <p>
+            <app:button label="Mini button" variant="primary" size="mini"/>
+            <app:button label="Mini button" size="mini"/>    
+        </p>
+
+        <h2>Pub/sub events</h2>
+        <app:button label="Say 'Hello World'" variant="primary" w:event-click="sayHello; message='Hello World'"/>
+        <app:button label="Say 'Hello Universe'" variant="primary" w:event-click="sayHello; message='Hello Universe'"/>
+
+        <h2>Button ids</h2>
+        <app:button label="Delete" variant="danger" w:id="deleteButton"/>
+
+        <h2>Button rendering</h2>
+        <app:button label="Render a new button" variant="primary" w:event-click="renderNewButton"/>
+
+        <div w:el-id="renderTarget"/>
+
+
+    </div>
+
+</c:template>

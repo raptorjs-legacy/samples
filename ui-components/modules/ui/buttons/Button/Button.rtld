@@ -4,8 +4,8 @@
         <attribute name="id" type="string"/>
         <attribute name="label" type="string"/>
         <attribute name="href" type="string"/>
-        <attribute name="variant" type="string"/>
-        <attribute name="size" type="string"/>
+        <attribute name="variant" type="string" description="primary | info | success | warning | danger | inverse"/>
+        <attribute name="size" type="string" description="large | small | mini"/>
         <attribute name="toggle" type="boolean"/>
         <attribute name="toggled" type="boolean"/>
         <attribute name="dropdown" type="boolean"/>

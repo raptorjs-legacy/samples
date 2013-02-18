@@ -7,23 +7,20 @@
 
     <optimizer:page name="index" base-path="build">
         <dependencies>
-            <module name="app-global"/>
-            <module name="ui/search/SearchForm"/>
-            <module name="ui/search/SearchResultsContainer"/>
+            <module name="ui/demo/ComponentsDemo"/>
         </dependencies>
     </optimizer:page>    
 
     <html html:doctype="html">
         <head>
-            <title>Widgets Demo</title>
+            <title>UI Components Demo | RaptorJS</title>
             <optimizer:slot name="head"/>
             
         </head>
         <body>
             
-            <app:search-form/>
-            <app:search-results-container/>
-            
+            <app:components-demo/>
+                        
             <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
             <optimizer:slot name="body"/>
             <w:init-widgets/>

@@ -1,0 +1,11 @@
+{
+    "raptor": {
+        "dependencies": [
+            {"module": "raptor/widgets"},
+            {"module": "raptor/component-renderer"},
+            {"module": "ui/buttons/Button"},
+            "ComponentsDemoWidget.js",
+            "Componentsdemo.css"
+        ]
+    }
+}
