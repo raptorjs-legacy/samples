@@ -30,20 +30,17 @@
     </target>
     
     <target name="build-ui-components">
+        
+    </target>
+
+    <target name="build-samples">
         <ant dir="ui-components"/>
+        <ant dir="tutorial"/>
     </target>
                  
     <target name="build" 
-        depends="build-async-loader-get-started,
-                 build-optimizer-get-started-cli,         
-                 build-optimizer-get-started-raptor-templates,
-                 build-optimizer-get-started-javascript-api,
-                 build-ui-components"/>
+        depends="build-samples"/>
     
     <target name="clean" 
-        depends="clean-async-loader-get-started,
-                 clean-optimizer-get-started-cli,         
-                 clean-optimizer-get-started-raptor-templates,
-                 clean-optimizer-get-started-javascript-api,
-                 clean-ui-components"/>
+        depends="clean-samples"/>
 </project>
