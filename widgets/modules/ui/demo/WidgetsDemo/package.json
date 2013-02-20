@@ -1,0 +1,10 @@
+{
+    "raptor": {
+        "dependencies": [
+            {"module": "raptor/widgets"},
+            {"module": "ui/demo/ColorChangeButton"},
+            "WidgetsDemoWidget.js",
+            "WidgetsDemo.css"
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+<c:template
+    xmlns:c="core"
+    xmlns:w="widgets"
+    xmlns:app="app">
+    
+    <div class="widgets-demo" w:widget="ui/demo/WidgetsDemo/WidgetsDemoWidget">
+    
+        
+        
+        <button type="button" w:el-id="changeColorsButton">Change Button Colors</button>
+        
+        <p>
+            <app:color-change-button w:id="redGreenBlueButton"
+                colors="red,green,blue" 
+                label="Click me (Red, Green and Blue)"/>
+
+            <app:color-change-button  w:id="cyanMagentaYellowButton"
+                colors="cyan,magenta,yellow" 
+                label="Click me (Cyan, Magenta and Yellow)"/>
+        </p>
+        <p>
+            <app:color-change-button 
+                c:for="i in [1]"
+                w:id="repeatedButtons[]"
+                colors="red,green,blue" 
+                label="Button $i"/>
+        </p>
+
+    </div>
+
+</c:template>

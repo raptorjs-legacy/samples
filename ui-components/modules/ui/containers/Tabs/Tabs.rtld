@@ -1,0 +1,17 @@
+<raptor-taglib>
+
+    <tag name="tabs" renderer="ui/containers/Tabs/TabsRenderer">
+        <attribute name="id"/>
+        <attribute name="tabs"/>
+
+        <variable name="_tabs"/>
+    </tag>
+    
+    <tag name="tab" renderer="ui/containers/Tabs/TabTag">
+        <attribute name="title"/>
+        <attribute name="active" type="boolean"/>
+        
+        <import-variable name="_tabs"/>
+    </tag>
+    
+</raptor-taglib>

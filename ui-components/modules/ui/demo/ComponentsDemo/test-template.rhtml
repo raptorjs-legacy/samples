@@ -1,0 +1,22 @@
+<c:template xmlns:c="core" 
+    xmlns:w="widgets"
+    xmlns:app="app"
+    name="ui/demo/ComponentsDemo/test-template">
+
+    <div class="test-template">
+        <h2>Buttons from template</h2>
+        <app:button label="Say 'Hello World'" variant="primary" w:event-click="sayHello; message='Hello World'"/>
+        <app:button label="Say 'Hello Universe'" variant="primary" w:event-click="sayHello; message='Hello Universe'"/> 
+
+        <h2>Tabs from template</h2>
+        <app:tabs>
+            <app:tab title="Home">
+                Content for the Home tab
+            </app:tab>
+            <app:tab title="Profile">
+                Content for the Profile tab
+            </app:tab>
+        </app:tabs>
+    </div>
+    
+</c:template>

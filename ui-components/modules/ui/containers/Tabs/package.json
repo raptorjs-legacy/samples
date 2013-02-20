@@ -5,9 +5,10 @@
             {"module": "raptor/templating"},
             {"module": "raptor/templating/taglibs/widgets"},
             {"module": "twitter-bootstrap"},
-            "ButtonWidget.js",
-            "ButtonRenderer.js",
-            "Button.rhtml"
+            "TabsWidget.js",
+            "TabsRenderer.js",
+            "TabTag.js",
+            "Tabs.rhtml"
         ]
     }
 }

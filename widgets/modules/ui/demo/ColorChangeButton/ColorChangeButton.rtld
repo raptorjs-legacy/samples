@@ -1,0 +1,11 @@
+<raptor-taglib>
+
+    <tag name="color-change-button" renderer="ui/demo/ColorChangeButton/ColorChangeButtonRenderer">
+        <attribute name="label" type="string"/>
+        <attribute name="colors" type="string"/>
+        
+        <!-- Support widget attributes -->
+        <attribute name="id" uri="widgets"/>
+    </tag>
+    
+</raptor-taglib>

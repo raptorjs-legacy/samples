@@ -3,6 +3,7 @@
     <uri>app</uri>
     
     <import-taglib path="/ui/buttons/Button/Button.rtld"/>
+    <import-taglib path="/ui/containers/Tabs/Tabs.rtld"/>
     <import-taglib path="/ui/demo/ComponentsDemo/ComponentsDemo.rtld"/>
     
 </raptor-taglib>

@@ -13,6 +13,8 @@ require('raptor/optimizer').configure(
 resources.addSearchPathDir(__dirname);
 resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 
+//require('raptor/templating/compiler').setWorkDir(files.joinPaths(__dirname, "work"));
+
 var pageOutputPath = files.joinPaths(__dirname, 'build/index.html');
 try
 {

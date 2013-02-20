@@ -1,0 +1,32 @@
+<project name="widgets" basedir="." default="build">	
+	
+    <target name="npm-install">
+        <exec executable="npm">
+            <arg value="install"/>
+        </exec>
+    </target>
+
+	<target name="build-dev">
+        
+        <exec executable="node">
+            <arg value="build.js"/>
+        	<arg value="dev"/>
+        </exec>
+    </target>
+	
+    <target name="build" depends="npm-install">
+    	<exec executable="npm">
+            <arg value="install"/>
+        </exec>
+        <exec executable="node">
+            <arg value="build.js"/>
+        </exec>
+    </target>
+    
+    <target name="clean">
+        <delete dir="build"/>
+        <delete dir="work"/>
+        <delete dir="node_modules"/>
+    </target>
+    
+</project>

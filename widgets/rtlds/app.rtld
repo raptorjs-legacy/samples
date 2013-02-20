@@ -1,0 +1,8 @@
+
+<raptor-taglib>
+    <uri>app</uri>
+    
+    <import-taglib path="/ui/demo/ColorChangeButton/ColorChangeButton.rtld"/>
+    <import-taglib path="/ui/demo/WidgetsDemo/WidgetsDemo.rtld"/>
+    
+</raptor-taglib>

@@ -1,0 +1,31 @@
+<c:template
+    xmlns:c="core"
+    xmlns:html="html"
+    xmlns:optimizer="optimizer"
+    xmlns:w="widgets">
+
+    <optimizer:page name="index" base-path="build">
+        <dependencies>
+            <module name="raptor"/>
+            <module name="raptor/widgets"/>
+            <module name="ui/demo/WidgetsDemo"/>
+        </dependencies>
+    </optimizer:page>    
+
+    <html html:doctype="html">
+        <head>
+            <title>Widgets Demo | RaptorJS</title>
+            <optimizer:slot name="head"/>
+            
+        </head>
+        <body>
+            
+            <app:widgets-demo/>
+                        
+            <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+            <optimizer:slot name="body"/>
+            <w:init-widgets/>
+        </body>
+    </html>
+</c:template>
+
