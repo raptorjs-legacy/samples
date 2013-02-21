@@ -1,7 +1,7 @@
 RaptorJS Sample: UI Components
 ==============================
 
-This guide will describe a recipe for building UI components that are 
+This sample application demonstrates a recipe for building UI components that are 
 independently testable and can be rendered on the server or in the browser.
 
 For this guide, the following technologies will be used:
