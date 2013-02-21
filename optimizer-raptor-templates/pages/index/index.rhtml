@@ -2,13 +2,18 @@
     xmlns:c="core"
     xmlns:optimizer="optimizer">
 
-    <optimizer:page name="test-page" base-path=".">
+    <optimizer:page name="index" base-path=".">
         <dependencies>
             <module name="raptor"/>
+            <module name="raptor/loader"/>
+            <loader-metadata/>
             <module name="module-a"/>
             <module name="module-b"/>
-            <css path="test-page.css"/>
-            <js path="test-page.js"/>
+            <module name="module-c"/>
+            <module name="module-d" async="true"/>
+            <css path="index.css"/>
+            <js path="index.js"/>
+            
         </dependencies>
     </optimizer:page>
 
@@ -20,6 +25,12 @@
         <body>
             Hello from the RaptorJS Optimizer Taglib!
             <optimizer:slot name="body"/>
+            <script type="text/javascript">
+            require('module-c').sayHello();
+            require('module-d', function(moduleD) {
+                moduleD.sayHello();
+            });
+            </script>
         </body>
     </html>
 

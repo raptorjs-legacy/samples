@@ -1,8 +1,0 @@
-{
-    "dependencies": [
-        { "module": "module-a" },
-        { "module": "module-b" },
-        "test-page.css",
-        "test-page.js"
-    ]
-}

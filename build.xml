@@ -1,41 +1,23 @@
 <project name="raptorjs-samples" basedir="." default="build">
-    
-
-    <target name="clean-async-loader-get-started">
-    </target>
-	
-    <target name="clean-optimizer-get-started-cli">
-    </target>
-    
-    <target name="clean-optimizer-get-started-raptor-templates">
-    </target>
-    
-    <target name="clean-optimizer-get-started-javascript-api">
-    </target>
-    
-    <target name="clean-ui-components">
-    	<ant dir="ui-components" target="clean"/>
-    </target>
-    
-    <target name="build-async-loader-get-started">
-    </target>
-    
-    <target name="build-optimizer-get-started-cli">
-    </target>
-    
-    <target name="build-optimizer-get-started-raptor-templates">
-    </target>
-    
-    <target name="build-optimizer-get-started-javascript-api">
-    </target>
-    
-    <target name="build-ui-components">
-        
-    </target>
 
     <target name="build-samples">
-        <ant dir="ui-components"/>
+        <ant dir="async-loader"/>
+        <ant dir="optimizer-cli"/>
+        <ant dir="optimizer-javascript-api"/>
+        <ant dir="optimizer-raptor-templates"/>
         <ant dir="tutorial"/>
+        <ant dir="ui-components"/>
+        <ant dir="widgets"/>
+    </target>
+
+    <target name="clean-samples">
+        <ant dir="async-loader" target="clean"/>
+        <ant dir="optimizer-cli" target="clean"/>
+        <ant dir="optimizer-javascript-api" target="clean"/>
+        <ant dir="optimizer-raptor-templates" target="clean"/>
+        <ant dir="tutorial" target="clean"/>
+        <ant dir="ui-components" target="clean"/>
+        <ant dir="widgets" target="clean"/>
     </target>
                  
     <target name="build" 

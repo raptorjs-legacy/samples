@@ -1,27 +1,3 @@
-<project name="ui-components" basedir="." default="build">	
-	
-	<target name="build-dev">
-        <exec executable="npm">
-            <arg value="install"/>
-        </exec>
-        <exec executable="node">
-            <arg value="build.js"/>
-        	<arg value="dev"/>
-        </exec>
-    </target>
-	
-    <target name="build">
-    	<exec executable="npm">
-            <arg value="install"/>
-        </exec>
-        <exec executable="node">
-            <arg value="build.js"/>
-        </exec>
-    </target>
-    
-    <target name="clean">
-        <delete dir="build"/>
-        <delete dir="node_modules"/>
-    </target>
-    
+<project name="sample-app" basedir="." default="build"> 
+    <import file="../build-sample-common.xml"/>
 </project>

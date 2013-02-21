@@ -1,7 +1,7 @@
 {
-  "name": "tutorial",
+  "name": "sample-optimizer-javascript-api",
   "version": "0.0.0",
-  "description": "RaptorJS Sample: Tutorial",
+  "description": "RaptorJS Sample: Optimizer JavaScirpt API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

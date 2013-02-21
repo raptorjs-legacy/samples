@@ -1,0 +1,8 @@
+<project name="sample-app" basedir="." default="build">	
+	<import file="../build-sample-common.xml"/>
+	
+	<target name="build">
+        <exec executable="${basedir}/run-optimizer.sh" failonerror="true">
+        </exec>
+    </target>
+</project>

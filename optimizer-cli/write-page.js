@@ -8,26 +8,25 @@ var files = require('raptor/files');
  * each "slot". The slot HTML is used to include the optimized
  * resource bundles into the final optimized page.
  */
-var optimizedPageJSON = files.readAsString("./static/test-page-optimized.json");
-var optimizedPage = JSON.parse(optimizedPageJSON);
+var optimizedPage = JSON.parse(
+        files.readAsString("./build/static/index-html.json"));
 
 /*
  * Now read the page HTML file so that we can replace the slot placeholders
  * with the generated slot HTML.
  */
-var pageHtmlPath = "pages/test-page/test-page.html";
-var outputPath = "test-page.html";
-var pageHtml = files.readAsString(pageHtmlPath);
+var pageHtml = files.readAsString("pages/index/index.html");
 
 /*
  * Use a regular expression to find the slots and inject the slot HTML
  */
 var outputHtml = pageHtml.replace(/<!--\s*slot: ([\w]*)\s*-->/g, function(matches, slotName) {
-    return optimizedPage[slotName];
+    return optimizedPage[slotName] || '';
 });
 
 /*
  * Write back the optimized page to disk
  */
-console.log('Writing updated page with optimizer-generated HTML to "' + outputPath + '"...');
-files.writeAsString(outputPath, outputHtml);
+var outputFile = files.createFile(__dirname + "/build/index.html");
+outputFile.writeAsString(outputHtml);
+console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());

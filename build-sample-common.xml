@@ -1,0 +1,37 @@
+<project name="samples-common" basedir="." default="build">  
+    <property name="cwd" location="."/>
+
+    <target name="npm-install">
+        <exec executable="npm" failonerror="false" errorproperty="npmLinkError">
+            <arg value="link"/>
+            <arg value="raptor"/>
+        </exec>
+
+        <exec executable="npm" failonerror="true">
+            <arg value="install"/>
+        </exec>
+    </target>
+
+    <target name="build-dev">
+        
+        <exec executable="node" failonerror="true">
+            <arg value="build.js"/>
+            <arg value="dev"/>
+        </exec>
+    </target>
+    
+    <target name="build" depends="npm-install">
+        <exec executable="node" failonerror="true">
+            <arg value="build.js"/>
+        </exec>
+    </target>
+    
+    <target name="clean">
+        <echo message="Cleaning ${cwd}..."/>
+        <delete includeEmptyDirs="true" removeNotFollowedSymlinks="true" failonerror="false">
+            <fileset dir="node_modules" followsymlinks="false"/>
+        	<fileset dir="build"/>
+        </delete>
+    </target>
+    
+</project>

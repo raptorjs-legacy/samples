@@ -6,5 +6,11 @@
     <body>
         <div class="title">Hello from the RaptorJS Optimizer CLI!</div>
         <!-- slot: body -->
+        <script type="text/javascript">
+        require('module-c').sayHello();
+        require('module-d', function(moduleD) {
+            moduleD.sayHello();
+        });
+        </script>
     </body>
 </html>

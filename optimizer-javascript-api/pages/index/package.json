@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        { "module": "raptor" },
+        { "module": "raptor/loader" },
+        { "type": "loader-metadata" },
+        { "module": "module-a" },
+        { "module": "module-b" },
+        { "module": "module-c" },
+        { "module": "module-d", "async": true },
+        "index.css",
+        "index.js"
+    ]
+}

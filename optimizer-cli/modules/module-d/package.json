@@ -1,0 +1,6 @@
+{
+    "dependencies": [
+        "module-d.js",
+        "module-d.css"
+    ]
+}

@@ -1,9 +1,9 @@
 define(
-    "module-a",
+    "module-c",
     function(require) {
         return {
             sayHello: function() {
-                document.write('<p class="module-a">Hello from "module-a"!</p>');
+                document.write('<p>Hello from "module-c"!</p>');
             }
         };
     });

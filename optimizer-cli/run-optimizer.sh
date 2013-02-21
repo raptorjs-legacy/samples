@@ -1,11 +1,15 @@
-rm -rf static
+npm install &&
+rm -rf build &&
 raptor-optimizer \
     raptor \
     /css/global.css \
-    ./pages/test-page/package.json \
+    ./pages/index/package.json \
     module-c \
-    --name test-page \
+    module-d? \
+    --name index \
     --source modules \
-    --out static \
-    --url-prefix static/
-node update-html.js
+    --out build/static \
+    --url-prefix static/ \
+    --html \
+    --minify && 
+node write-page.js

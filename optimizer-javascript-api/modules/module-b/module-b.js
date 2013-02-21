@@ -2,8 +2,8 @@ define(
     "module-b",
     function(require) {
         return {
-            hello: function() {
-                return 'Hello from "module-b"!';
+            sayHello: function() {
+                document.write('<p class="module-b">Hello from "module-b"!</p>');
             }
         };
     });

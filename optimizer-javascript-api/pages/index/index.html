@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>RaptorJS Optimizer CLI: Hello World</title>
+        <!-- slot: head -->
+    </head>
+    <body>
+        <div class="title">Hello from the RaptorJS Optimizer (JavaScript API)!</div>
+        <!-- slot: body -->
+        <script type="text/javascript">
+        require('module-c').sayHello();
+        require('module-d', function(moduleD) {
+            moduleD.sayHello();
+        });
+        </script>
+    </body>
+</html>
