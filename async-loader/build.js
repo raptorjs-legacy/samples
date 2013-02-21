@@ -39,7 +39,7 @@ try
         outputDir: files.joinPaths(__dirname, '/build')
     });
 
-    console.log('Test page written to "' + outputFile + '"');
+    console.log('Published page: ' + outputFile.getAbsolutePath());
 }
 catch(e) {
     require('raptor/logging').logger('build.js').error(e);

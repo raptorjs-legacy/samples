@@ -17,10 +17,10 @@ var pageOutputPath = files.joinPaths(__dirname, 'build/index.html');
 try
 {
     templating.renderToFile("/index.rhtml", pageOutputPath);    
+    console.log('Published page: ' + pageOutputPath);
 }
 catch(e) {
     require('raptor/logging').logger('build').error(e);
 }
 
 
-console.log('Published page: ' + pageOutputPath);
