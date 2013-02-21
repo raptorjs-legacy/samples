@@ -1,4 +1,2 @@
-samples
-=======
-
 RaptorJS Sample Applications
+============================
