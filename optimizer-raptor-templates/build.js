@@ -25,7 +25,7 @@ resources.addSearchPathDir(require('path').join(__dirname, 'modules'));
 try
 {
     var outputHtml = templating.renderToString("/pages/index/index.rhtml");
-    var outputFile = files.createFile(__dirname + "/index.html");
+    var outputFile = files.createFile(__dirname + "/build/index.html");
 
     outputFile.writeAsString(outputHtml);
     console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());
