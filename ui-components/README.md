@@ -15,7 +15,7 @@ For this guide, the following technologies will be used:
 
 [View Live Demo](http://raptorjs.org/demos/ui-components/)
 
-To view the full documentation for this sample please visit [RaptorJS: Building UI Components](http://raptorjs.org/ui-components/).
+To view the full documentation for this sample please see [RaptorJS: Building UI Components](http://raptorjs.org/ui-components/).
 
 ## Run Sample
 
