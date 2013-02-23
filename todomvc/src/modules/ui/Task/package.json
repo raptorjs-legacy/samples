@@ -1,9 +1,0 @@
-{
-    "raptor": {
-        "dependencies": [
-            "Task.rhtml",
-            "TaskRenderer.js",
-            "TaskWidget.js"
-        ]
-    }
-}

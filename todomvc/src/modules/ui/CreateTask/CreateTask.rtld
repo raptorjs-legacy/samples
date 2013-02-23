@@ -1,3 +1,0 @@
-<raptor-taglib>
-    <tag name="create-task" renderer="ui/CreateTask/CreateTaskRenderer"/>
-</raptor-taglib>
