@@ -1,0 +1,51 @@
+<c:template
+    xmlns:c="core"
+    xmlns:html="html"
+    xmlns:w="widgets"
+    xmlns:optimizer="optimizer"
+    xmlns:app="app">
+    
+    <optimizer:page name="index" base-path="${data.pageOutputDir}">
+        <dependencies>
+            <module name="globals-css" />
+            <css path="app.css"/>
+            <module name="raptor" />
+            <module name="raptor/pubsub" />
+            <module name="raptor/templating" />
+            <module name="raptor/widgets" />
+            <module name="raptor/templating/taglibs/widgets" />
+            <module name="raptor/component-renderer" />           
+            <module name="ui/CreateTask" />
+            <module name="ui/Task" />
+            <module name="ui/Footer" />
+            <module name="ui/TasksContainer" />
+            <module name="store" />
+            <module name="Router" />
+        </dependencies>
+    </optimizer:page>
+    
+    
+    <html html:doctype="html">
+        <head>
+            <title>RaptorJS: TODO Example New</title>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+            <optimizer:slot name="head"/>
+        </head>
+        <body>
+            <section id="todoapp">
+                <app:create-task />
+                <app:tasks-container />
+                <app:footer />
+            </section>
+
+            <div id="info">
+                <p>Double-click to edit a todo</p>
+                <p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
+                <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+            </div>
+            
+            <optimizer:slot name="body"/>
+            <w:init-widgets/>
+        </body>
+    </html>
+</c:template>

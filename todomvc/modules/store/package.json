@@ -1,0 +1,12 @@
+{
+    "name": "store",
+    "version": "1.0",
+    "description": "Stores: data-store, ",
+    "raptor": {
+        "dependencies": [
+            "Store.js",
+            "TodoStore.js"
+        ]
+        
+    }   
+}

@@ -1,0 +1,7 @@
+<raptor-taglib>
+    <uri>app</uri>   
+    <import-taglib path="/ui/CreateTask/CreateTask.rtld"/>
+    <import-taglib path="/ui/Task/Task.rtld"/>
+    <import-taglib path="/ui/TasksContainer/TasksContainer.rtld"/>
+    <import-taglib path="/ui/Footer/Footer.rtld"/>
+</raptor-taglib>

@@ -1,0 +1,7 @@
+{
+    "raptor": {
+        "dependencies": [
+            "CreateTaskWidget.js"
+        ]
+    }
+}
