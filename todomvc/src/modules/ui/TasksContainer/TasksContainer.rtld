@@ -1,0 +1,3 @@
+<raptor-taglib>
+    <tag name="tasks-container" renderer="ui/TasksContainer/TasksContainerRenderer"/>
+</raptor-taglib>

@@ -1,0 +1,64 @@
+<optimizer-config>
+        
+    <params>
+        <profile>development</profile>
+    </params>
+    
+    <enable-profile>${profile}</enable-profile>
+    
+    <profile name="development">
+        <raptor-config>
+        {
+            logging: {
+                loggers: {
+                    'ROOT': {level: 'WARN'}
+                }
+            }
+        }
+        </raptor-config>
+        <enabled-extensions>jquery,browser,logging.console,development</enabled-extensions>
+        <bundling-enabled>false</bundling-enabled>
+        <in-place-deployment-enabled>true</in-place-deployment-enabled>
+        <minify-js>false</minify-js>
+        <checksums-enabled>false</checksums-enabled>        
+    </profile>
+    
+    <profile name="production">
+        <checksums-enabled>true</checksums-enabled>
+        <enabled-extensions>jquery,browser,production</enabled-extensions>
+        <bundling-enabled>true</bundling-enabled>
+        <resolve-css-urls>true</resolve-css-urls>
+        <in-place-deployment-enabled>false</in-place-deployment-enabled>
+        <!-- <url-prefix>/static/</url-prefix> -->
+        <minify-js>false</minify-js>
+        <raptor-config>
+        {
+        }
+        </raptor-config>
+    </profile>
+
+    <output-dir>../static</output-dir>
+
+    <bundles name="default">
+
+        <bundle name="raptor">
+            <module name="raptor" recursive="true"/>
+            <module name="thirdparty" />
+            
+            <module name="raptor/listeners" recursive="true"/>
+            <module name="raptor/pubsub" />
+        </bundle>
+        <bundle name="widgets">
+            <module name="raptor/widgets" recursive="true"/>
+        </bundle>
+        
+        <bundle name="templating">
+            <module name="raptor/templating" recursive="true"/>
+        </bundle>
+        
+        <bundle name="templating-compiler">
+            <module name="raptor/templating/compiler" recursive="true"/>
+        </bundle>
+    </bundles>
+    
+</optimizer-config>

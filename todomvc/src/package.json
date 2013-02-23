@@ -1,0 +1,20 @@
+{
+    "type": "raptor-library",
+    "name": "Main App",
+    "version": "1.0",
+    "description": "Demo TODO Application",
+    "homepage": "http://wiki2.arch.ebay.com/display/RAPTOR/Home",
+    "authors": [
+        {
+            "name": "Neeraj Khanna",
+            "email": "nkhanna@ebay.com"
+        }
+    ],
+    
+    "raptor": {
+        "search-path": [
+            {"dir": "modules"}
+        ]  
+    }
+    
+}
