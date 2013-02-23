@@ -1,8 +1,7 @@
 {
-    "type": "raptor-library",
-    "name": "Main App",
+    "name": "TODO App",
     "version": "1.0",
-    "description": "Demo TODO Application",
+    "description": "Raptor JS Samples: TODO Application",
     "homepage": "http://wiki2.arch.ebay.com/display/RAPTOR/Home",
     "authors": [
         {
