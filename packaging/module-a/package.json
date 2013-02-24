@@ -1,0 +1,19 @@
+{
+    "raptor": {
+        "dependencies": [
+            { "module": "module-b" },
+            "module-a.js",
+            "module-a.rhtml",
+            "module-a.css"
+        ],
+        
+        "extensions": [
+            {
+                "name": "test",
+                "dependencies": [
+                    "module-a_test.js"
+                ]
+            }
+        ]
+    }
+}
