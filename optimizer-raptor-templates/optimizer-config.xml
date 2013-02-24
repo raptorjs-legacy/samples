@@ -9,8 +9,8 @@
     
     <profile name="development">
         <enabled-extensions>browser,raptor/logging/console,development</enabled-extensions>
-        <bundling-enabled>false</bundling-enabled>
-        <in-place-deployment-enabled>true</in-place-deployment-enabled>
+        <bundling-enabled>true</bundling-enabled>
+        <in-place-deployment-enabled>false</in-place-deployment-enabled>
         <minify-js>false</minify-js>
         <minify-css>false</minify-css>
         <checksums-enabled>false</checksums-enabled>        
@@ -19,7 +19,7 @@
     <profile name="production">
         <checksums-enabled>true</checksums-enabled>
         <enabled-extensions>browser,production</enabled-extensions>
-        <bundling-enabled>false</bundling-enabled>
+        <bundling-enabled>true</bundling-enabled>
         <resolve-css-urls>true</resolve-css-urls>
         <in-place-deployment-enabled>false</in-place-deployment-enabled>
         <minify-js>false</minify-js>

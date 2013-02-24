@@ -3,7 +3,7 @@ define(
     function(require) {
         return {
             sayHello: function() {
-                document.write('<p>Hello from "module-a"!</p>');
+                document.write('<p class="module-a">Hello from "module-a"!</p>');
             }
         };
     });
