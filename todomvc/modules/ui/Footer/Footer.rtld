@@ -1,0 +1,3 @@
+<raptor-taglib>
+    <tag name="footer" renderer="ui/Footer/FooterRenderer"/>
+</raptor-taglib>

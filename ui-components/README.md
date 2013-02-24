@@ -1,7 +1,7 @@
 RaptorJS Sample: UI Components
 ==============================
 
-This guide will describe a recipe for building UI components that are 
+This sample application demonstrates a recipe for building UI components that are 
 independently testable and can be rendered on the server or in the browser.
 
 For this guide, the following technologies will be used:
@@ -13,7 +13,7 @@ For this guide, the following technologies will be used:
 * [RaptorJS Optimizer](http://raptorjs.org/optimizer/): Delivering JavaScript and CSS code to the browser
 * [RaptorJS AMD](http://raptorjs.org/modules-classes/): Modules, classes and mixins
 
-[View Live Demo](http://raptorjs.org/demos/ui-components/)
+[View Demo](http://raptorjs.org/demos/ui-components/)
 
 To view the full documentation for this sample please see [RaptorJS: Building UI Components](http://raptorjs.org/ui-components/).
 

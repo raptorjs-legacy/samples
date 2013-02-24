@@ -1,0 +1,11 @@
+{
+    "name": "router",
+    "version": "1.0",
+    "description": "Router and filter links",
+    "raptor": {
+        "dependencies": [
+            "Router.js"
+        ]
+        
+    }   
+}
