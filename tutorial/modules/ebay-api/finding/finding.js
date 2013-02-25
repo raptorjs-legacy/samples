@@ -1,5 +1,5 @@
 define('ebay-api/finding', function(require) {
-    var baseUrl = "http://localhost:3000/ebay/finding";
+    var baseUrl = "http://raptorjs-samples-api.herokuapp.com/ebay/finding";
 
     
 
@@ -27,18 +27,8 @@ define('ebay-api/finding', function(require) {
             }
 
             url += '?callback=?'
-
-            var deferred = new $.Deferred();
-
-            $.getJSON(url).then(
-                    function(data) {
-                        deferred.resolve(data[0]);
-                    },
-                    function(request, status, errorThrown) {
-                        deferred.reject(arguments);
-                    });
-
-            return deferred.promise();
+            
+            return $.getJSON(url);
         },
 
         _performServiceCall: function(url) {
