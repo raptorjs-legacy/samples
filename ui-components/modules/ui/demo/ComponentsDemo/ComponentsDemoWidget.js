@@ -63,8 +63,8 @@ define(
                 }
             }, this);
 
-            this.widgets.submitButton.on('click', function() {
-                alert('You clicked the "Submit" button');
+            this.widgets.saveButton.on('click', function() {
+                alert('You clicked the "Save" button');
             });
 
             this.widgets.deleteButton.on('click', function() {
@@ -73,10 +73,6 @@ define(
 
             
         };
-
-        ComponentsDemoWidget.widgets = {
-
-        }
         
         ComponentsDemoWidget.prototype = {
         };

@@ -3,7 +3,19 @@
     <tag name="tabs" renderer="ui/containers/Tabs/TabsRenderer">
         <attribute name="id"/>
         <attribute name="tabs"/>
+        
+        <!-- 
+        The following line causes a scoped variable
+        to be introduced in the compiled body JavaScript
+        function. The nested <app:tab> tag declared
+        below uses the <import-variable> directive
+        to import the scoped variable such that it
+        becomes a property of its input model.
 
+        When the TabsRenderer invokes the nested
+        body function it passes the value of the "_tabs"
+        variable as the first argument.
+        -->
         <variable name="_tabs"/>
     </tag>
     

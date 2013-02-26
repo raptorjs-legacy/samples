@@ -11,7 +11,9 @@ define(
                 
                 if (!tabs) {
                     tabs = [];
-                    //Discover nested tabs if not provided as part of input
+                    // Discover nested tabs if not provided as part of input
+                    // NOTE: The first argument becomes the value of the scoped "_tabs"
+                    //       variable. See Tabs.rtld for details.
                     input.invokeBody({
                         addTab: function(tab) {
                             tabs.push(tab);
