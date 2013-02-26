@@ -54,12 +54,16 @@
                     Content for the Profile tab
                 </app:tab>
             </app:tabs>
+
+            <app:simple-button label="Simple Button 1"/>
+            <app:simple-button label="Simple Button 2"/>
         </div>
         <div class="col">
             <h1>Client-side Component Rendering</h1>
             <app:button label="Render a new button" variant="primary" w:event-click="renderNewButton"/>
             <app:button label="Render new tabs" variant="primary" w:event-click="renderNewTabs"/>
             <app:button label="Render template" variant="primary" w:event-click="renderTemplate"/>
+            <app:button label="Render SimpleButton" variant="primary" w:event-click="renderSimpleButton"/>
 
             <div w:el-id="renderTarget"/>
         </div>

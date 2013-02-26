@@ -51,6 +51,15 @@ define(
                                 context);
                         })
                         .appendTo(this.getEl('renderTarget'));
+                },
+                'renderSimpleButton': function() {
+                    require('raptor/component-renderer').render(
+                        'ui/buttons/SimpleButton/SimpleButtonRenderer', // The renderer
+                        {                                               // The input data model
+                            label: 'Simple Button'
+                        })
+                        .appendTo(this.getEl('renderTarget'));                       // Invoke helper method for inserting 
+                                                                        // the HTML into the DOM
                 }
             }, this);
 

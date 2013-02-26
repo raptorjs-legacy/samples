@@ -6,6 +6,7 @@
             {"module": "raptor/widgets"},
             {"module": "raptor/component-renderer"},
             {"module": "ui/buttons/Button"},
+            {"module": "ui/buttons/SimpleButton"},
             {"module": "ui/containers/Tabs"},
             "ComponentsDemoWidget.js",
             "Componentsdemo.css",
