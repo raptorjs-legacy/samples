@@ -20,7 +20,7 @@
             <module name="ui/Footer" />
             <module name="ui/TasksContainer" />
             <module name="store" />
-            <module name="Router" />
+            <module name="ui/App" />
         </dependencies>
     </optimizer:page>
     
@@ -32,7 +32,7 @@
             <optimizer:slot name="head"/>
         </head>
         <body>
-            <section id="todoapp">
+            <section id="todoapp" w:widget="ui/App/AppWidget">
                 <app:create-task />
                 <app:tasks-container />
                 <app:footer />
