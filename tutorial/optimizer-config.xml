@@ -3,7 +3,7 @@
         <profile>production</profile>
     </params>
     
-    <enable-profile>${profile}</enable-profile>
+    <enable-profile>production</enable-profile>
     
     
     
@@ -19,7 +19,7 @@
     <profile name="production">
         <checksums-enabled>true</checksums-enabled>
         <enabled-extensions>jquery,browser,production</enabled-extensions>
-        <bundling-enabled>false</bundling-enabled>
+        <bundling-enabled>true</bundling-enabled>
         <resolve-css-urls>true</resolve-css-urls>
         <in-place-deployment-enabled>false</in-place-deployment-enabled>
         <minify-js>true</minify-js>
