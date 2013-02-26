@@ -8,6 +8,7 @@ define.Class(
         var componentRenderer = require('raptor/component-renderer'),
             forEachEntry = raptor.forEachEntry,
             footer = $('#footer'),
+            footerLinks = $('#filters a'),
             todoCount = $('#todo-count-num'),
             completedCount = $('#completed-count'),
             completedBtn = $('#clear-completed');
@@ -21,6 +22,7 @@ define.Class(
                 });
 
                 pubsub.subscribe('TaskContainer/containerRefreshed', self.refresh, self);
+                pubsub.subscribe('AppWidget/filter', self.setActive, self);
                 pubsub.publish('Footer/initialized');
             },
 
@@ -42,6 +44,13 @@ define.Class(
                 } else {
                     completedBtn.hide();
                 }
+            },
+
+            setActive: function(){
+                footerLinks
+                    .removeClass('selected')
+                    .filter( '[href="#/' + (param || '') + '"]' )
+                    .addClass('selected');
             }
             
         }

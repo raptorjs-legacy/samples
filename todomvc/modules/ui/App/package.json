@@ -1,10 +1,10 @@
 {
-    "name": "router",
+    "name": "app",
     "version": "1.0",
-    "description": "Router and filter links",
+    "description": "Initialize App",
     "raptor": {
         "dependencies": [
-            "Router.js"
+            "AppWidget.js"
         ]
         
     }   

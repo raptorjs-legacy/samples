@@ -1,8 +1,8 @@
 'use strict';
 
-define(
-    'Router/Router', 
-    ['raptor/pubsub'], 
+define.Class(
+    'ui/App/AppWidget', 
+    ['raptor/pubsub'],
     function(pubsub, require, exports, module){
 
         return {
@@ -18,16 +18,8 @@ define(
             },
 
             filter: function(param){
-                pubsub.publish('Router/filter', {view: param || 'all'});
-                $('#filters a')
-                    .removeClass('selected')
-                    .filter( '[href="#/' + (param || '') + '"]' )
-                    .addClass('selected');
+                pubsub.publish('AppWidget/filter', {view: param || 'all'});
             }
         };
     }
 );
-
-$(function(){
-    require('Router/Router').init();
-});

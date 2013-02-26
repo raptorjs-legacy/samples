@@ -19,7 +19,7 @@ define.Class(
                 pubsub.subscribe('CreateTask/newTaskAdded', self.addNewTask, self);
                 pubsub.subscribe('Task/toggled', self.refresh, self);
                 pubsub.subscribe('Task/destroyed', self.removeTask, self);
-                pubsub.subscribe('Router/filter', self.filter, self);
+                pubsub.subscribe('AppWidget/filter', self.filter, self);
                 pubsub.subscribe('Footer/initialized', self.setTasksFromStore, self);
             },
 

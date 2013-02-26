@@ -24,13 +24,13 @@
     </profile>
     
     <profile name="production">
-        <checksums-enabled>false</checksums-enabled>
+        <checksums-enabled>true</checksums-enabled>
         <enabled-extensions>jquery,browser,production</enabled-extensions>
         <bundling-enabled>true</bundling-enabled>
         <resolve-css-urls>true</resolve-css-urls>
         <in-place-deployment-enabled>false</in-place-deployment-enabled>
         <!-- <url-prefix>/static/</url-prefix> -->
-        <minify-js>true</minify-js>
+        <minify-js>false</minify-js>
         <raptor-config>
         {
         }
