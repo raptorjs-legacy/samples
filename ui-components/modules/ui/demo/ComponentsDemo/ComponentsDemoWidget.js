@@ -45,11 +45,7 @@ define(
 
                 'renderTemplate': function() {
                     componentRenderer
-                        .render(function(input, context) {
-                            templating.render("ui/demo/ComponentsDemo/test-template", 
-                                {}, 
-                                context);
-                        })
+                        .renderTemplate("ui/demo/ComponentsDemo/test-template")
                         .appendTo(this.getEl('renderTarget'));
                 },
                 'renderSimpleButton': function() {
