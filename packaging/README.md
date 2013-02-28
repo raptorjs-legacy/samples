@@ -1,7 +1,7 @@
 RaptorJS Sample: Packaging
 ==============================
 
-This sample how packages are used on the server to load modules, as well as how packages are
+This sample demonstrates how packages are used on the server to load modules, as well as how packages are
 used by the RaptorJS Optimizer.
 
 To view the full documentation for this sample please see [RaptorJS: Packaging](http://raptorjs.org/packaging/get-started/).
