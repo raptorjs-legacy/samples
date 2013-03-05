@@ -4,7 +4,7 @@
             {"module": "raptor/templating"},
             {"module": "raptor/templating/taglibs/widgets"},
             {"module": "raptor/widgets"},
-            {"module": "raptor/component-renderer"},
+            {"module": "raptor/renderer"},
             {"module": "ui/buttons/Button"},
             {"module": "ui/buttons/SimpleButton"},
             {"module": "ui/containers/Tabs"},

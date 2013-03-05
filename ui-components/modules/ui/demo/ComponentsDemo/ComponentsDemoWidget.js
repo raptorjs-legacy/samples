@@ -3,7 +3,7 @@ define(
     function(require) {
         var pubsub = require('raptor/pubsub'),
             templating = require('raptor/templating'),
-            componentRenderer = require('raptor/component-renderer');
+            renderer = require('raptor/renderer');
 
         var ComponentsDemoWidget = function(config) {
             var _this = this;
@@ -18,7 +18,7 @@ define(
                 },
 
                 'renderNewButton': function(eventArgs) {
-                    componentRenderer
+                    renderer
                         .render('ui/buttons/Button/ButtonRenderer', {
                             variant: 'success', 
                             label: "New Button " + (++buttonRenderCount)
@@ -27,7 +27,7 @@ define(
                 },
 
                 'renderNewTabs': function() {
-                    componentRenderer
+                    renderer
                         .render('ui/containers/Tabs/TabsRenderer', {
                             tabs: [
                                 {
@@ -44,12 +44,12 @@ define(
                 },
 
                 'renderTemplate': function() {
-                    componentRenderer
+                    renderer
                         .renderTemplate("ui/demo/ComponentsDemo/test-template")
                         .appendTo(this.getEl('renderTarget'));
                 },
                 'renderSimpleButton': function() {
-                    require('raptor/component-renderer').render(
+                    require('raptor/renderer').render(
                         'ui/buttons/SimpleButton/SimpleButtonRenderer', // The renderer
                         {                                               // The input data model
                             label: 'Simple Button'

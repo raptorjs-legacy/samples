@@ -3,7 +3,7 @@ define.Class(
     function(require) {
         var pubsub = require('raptor/pubsub'),
             SearchResultsRenderer = require("ui/search/SearchResults/SearchResultsRenderer"),
-            componentRenderer = require('raptor/component-renderer');
+            renderer = require('raptor/renderer');
 
         return {
             init: function(widgetConfig) {
@@ -54,7 +54,7 @@ define.Class(
                 this.$('#searching').fadeOut();
                 this.$('#count').text(searchResultItems.length);
 
-                componentRenderer.render(
+                renderer.render(
                     SearchResultsRenderer, 
                     {
                         searchResultItems: searchResultItems,
