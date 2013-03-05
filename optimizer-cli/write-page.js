@@ -16,7 +16,7 @@ var optimizedPage = JSON.parse(
  * Now read the page HTML file so that we can replace the slot placeholders
  * with the generated slot HTML.
  */
-var pageHtml = files.readAsString("pages/index/index.html");
+var pageHtml = files.readAsString("modules/pages/index/index.html");
 
 /*
  * Use a regular expression to find the slots and inject the slot HTML
@@ -29,5 +29,5 @@ var outputHtml = pageHtml.replace(/<!--\s*slot: ([\w]*)\s*-->/g, function(matche
  * Write back the optimized page to disk
  */
 var outputFile = new File(__dirname + "/build/index.html");
-files.writeAsString(outputHtml);
+outputFile.writeAsString(outputHtml);
 console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());

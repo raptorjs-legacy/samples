@@ -7,6 +7,8 @@
         <div class="title">Hello from the RaptorJS Optimizer CLI!</div>
         <!-- slot: body -->
         <script type="text/javascript">
+        require('module-a').sayHello();
+        require('module-b').sayHello();
         require('module-c').sayHello();
         require('module-d', function(moduleD) {
             moduleD.sayHello();
