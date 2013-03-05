@@ -1,4 +1,4 @@
-joconsole.log('Generating static files for RaptorJS Async Loader demo...');
+console.log('Generating static files for RaptorJS Async Loader demo...');
 
 require('raptor');
 
