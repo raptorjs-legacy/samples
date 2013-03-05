@@ -8,6 +8,7 @@ require('raptor/logging').configure({
 });
 
 var files = require('raptor/files'),
+    File = require('raptor/files/File'),
     optimizer = require('raptor/optimizer');
 
 require('raptor/resources').addSearchPathDir(require('path').join(__dirname, 'modules'));
@@ -35,7 +36,7 @@ try
     /*
      * Write back the optimized page to disk
      */
-    var outputFile = files.createFile(__dirname + "/build/index.html");
+    var outputFile = new File(__dirname + "/build/index.html");
     outputFile.writeAsString(outputHtml);
     console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());
 }

@@ -3,7 +3,7 @@
         <profile>production</profile>
     </params>
     
-    <enable-profile>production</enable-profile>
+    <enable-profile>${profile}</enable-profile>
     
     
     

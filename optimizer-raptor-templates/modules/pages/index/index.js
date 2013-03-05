@@ -1,4 +1,10 @@
 (function() {
-    require('module-a').sayHello();
-    require('module-b').sayHello();
+    var logging = require('raptor/logging');
+    logging.configure({
+        loggers: {
+            'ROOT': {level: "DEBUG"}
+        }
+    });
+    
+    logging.logger('index').debug("Hello!");
 }());

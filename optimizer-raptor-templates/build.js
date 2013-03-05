@@ -7,12 +7,13 @@ require('raptor/logging').configure({
     }
 });
 
-var files = require('raptor/files'),
+var files = require('raptor/files')
+    File = require('raptor/files/File'),
     templating = require('raptor/templating'),
     resources = require('raptor/resources'),
     optimizer = require('raptor/optimizer'),
     logger = require('raptor/logging').logger('build'),
-    outputFile = files.createFile(__dirname + "/build/index.html");
+    outputFile = new File(__dirname + "/build/index.html");
 
 
 optimizer.configure(

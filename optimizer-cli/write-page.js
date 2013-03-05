@@ -1,6 +1,7 @@
 require('raptor');
 
-var files = require('raptor/files');
+var files = require('raptor/files'),
+    File = require('raptor/files/File');
 
 /*
  * Read the JSON output file produced by the optimizer. This file
@@ -27,6 +28,6 @@ var outputHtml = pageHtml.replace(/<!--\s*slot: ([\w]*)\s*-->/g, function(matche
 /*
  * Write back the optimized page to disk
  */
-var outputFile = files.createFile(__dirname + "/build/index.html");
-outputFile.writeAsString(outputHtml);
+var outputFile = new File(__dirname + "/build/index.html");
+files.writeAsString(outputHtml);
 console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());

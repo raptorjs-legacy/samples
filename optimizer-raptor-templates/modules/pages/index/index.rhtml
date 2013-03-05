@@ -25,6 +25,8 @@
             Hello from the RaptorJS Optimizer Taglib!
             <optimizer:slot name="body"/>
             <script type="text/javascript">
+            require('module-a').sayHello();
+            require('module-b').sayHello();
             require('module-c').sayHello();
             require('module-d', function(moduleD) {
                 moduleD.sayHello();
