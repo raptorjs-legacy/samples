@@ -10,6 +10,6 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "raptor": ">=2.1.0"
+    "raptor": ">=2.2.8"
   }
 }
