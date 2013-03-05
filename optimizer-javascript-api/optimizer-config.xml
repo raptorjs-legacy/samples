@@ -1,11 +1,10 @@
 <optimizer-config>
     <params>
+        <!-- Default to the "production" profile: -->
         <profile>production</profile>
     </params>
     
     <enable-profile>${profile}</enable-profile>
-    
-    
     
     <profile name="development">
         <enabled-extensions>browser,raptor/logging/console,development</enabled-extensions>
@@ -19,13 +18,25 @@
     <profile name="production">
         <checksums-enabled>true</checksums-enabled>
         <enabled-extensions>browser,production</enabled-extensions>
-        <bundling-enabled>false</bundling-enabled>
+        <bundling-enabled>true</bundling-enabled>
         <resolve-css-urls>true</resolve-css-urls>
         <in-place-deployment-enabled>false</in-place-deployment-enabled>
-        <minify-js>false</minify-js>
-        <minify-css>false</minify-css>
+        <minify-js>true</minify-js>
+        <minify-css>true</minify-css>
     </profile>
     
     <output-dir>build/static</output-dir>
+
+    <bundles>
+        <!-- Configure two resource bundles for our application -->
+        <bundle name="bundle1">
+            <module name="module-a"/>
+            <module name="module-b"/>
+        </bundle>
+        <bundle name="bundle2">
+            <module name="module-b"/>
+            <module name="module-c"/>
+        </bundle>
+    </bundles>
     
 </optimizer-config>
