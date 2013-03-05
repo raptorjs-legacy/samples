@@ -1,8 +1,11 @@
 {
-    "dependencies": [
-        { "module": "module-a" },
-        { "module": "module-b" },
-        "index.css",
-        "index.js"
-    ]
+    "raptor": {
+        "dependencies": [
+            { "module": "module-a" },
+            { "module": "module-b" },
+            "index.css",
+            "index.js"
+        ]
+    }
+    
 }

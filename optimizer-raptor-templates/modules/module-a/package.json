@@ -1,6 +1,8 @@
 {
-    "dependencies": [
-        "module-a.js",
-        "module-a.css"
-    ]
+    "raptor": {
+        "dependencies": [
+            "module-a.js",
+            "module-a.css"
+        ]
+    }
 }
