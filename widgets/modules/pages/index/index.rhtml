@@ -2,6 +2,7 @@
     xmlns:c="core"
     xmlns:html="html"
     xmlns:optimizer="optimizer"
+    xmlns:app="app"
     xmlns:w="widgets">
 
     <optimizer:page name="index" base-path="build">
@@ -9,6 +10,8 @@
             <module name="raptor"/>
             <module name="raptor/widgets"/>
             <module name="ui/demo/WidgetsDemo"/>
+            <css path="index.css"/>
+            <js path="SimpleWidget.js"/>
         </dependencies>
     </optimizer:page>    
 
@@ -19,9 +22,34 @@
             
         </head>
         <body>
+            <fieldset>
+                <legend>Simple Widgets</legend>
+
+                <button type="button" 
+                    w:widget="SimpleWidget; config={color: 'red'}">
+
+                    Click me to turn me red
+
+                </button>
+
+                <button type="button"
+                    w:widget="SimpleWidget; config={color: 'green'}">
+
+                    Click me to turn me green
+
+                </button>
+
+            </fieldset>
+    
+
+
+            <fieldset>
+                <legend>Widgets Demo</legend>
+
+                <app:widgets-demo/>
+
+            </fieldset>
             
-            <app:widgets-demo/>
-                        
             <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
             <optimizer:slot name="body"/>
             <w:init-widgets/>

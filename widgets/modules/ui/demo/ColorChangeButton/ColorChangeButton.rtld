@@ -6,6 +6,7 @@
         
         <!-- Support widget attributes -->
         <attribute name="id" uri="widgets"/>
+        <attribute name="event-click" uri="widgets"/>
     </tag>
     
 </raptor-taglib>

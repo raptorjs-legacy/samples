@@ -1,0 +1,8 @@
+<raptor-taglib>
+
+    <tag name="button" renderer="ui/demo/Button/ButtonRenderer">
+        <attribute name="label" type="string"/>
+        <attribute name="event-click" uri="widgets"/>
+    </tag>
+    
+</raptor-taglib>

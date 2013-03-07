@@ -4,10 +4,9 @@
     xmlns:app="app">
     
     <div class="widgets-demo" w:widget="ui/demo/WidgetsDemo/WidgetsDemoWidget">
-    
-        
-        
-        <button type="button" w:el-id="changeColorsButton">Change Button Colors</button>
+
+        <button type="button" w:el-id="changeColorsButton">Change Button Colors (Direct Referencing)</button>
+        <app:button label="Change Button Colors (Pub/Sub)" w:event-click="changeButtonColors"/>
         
         <p>
             <app:color-change-button w:id="redGreenBlueButton"
@@ -26,6 +25,14 @@
                 label="Button $i"/>
         </p>
 
+        <hr/>
+
+        <button type="button" w:el-id="renderTemplateButton">
+            Render Template with Widgets
+        </button>
+
+        <div w:el-id="renderTarget">
+        </div>
     </div>
 
 </c:template>

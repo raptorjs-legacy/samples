@@ -11,7 +11,16 @@ define.Class(
 
                 this.$rootEl.click(function(e) {
                     this.nextColor();
+                    this.publish('click', {button: this});
                 }.bind(this));
+
+                require('raptor/pubsub')
+                    .subscribe(
+                        'changeButtonColors',
+                        function() {
+                            this.nextColor();
+                        },
+                        this);
             },
 
             nextColor: function() {

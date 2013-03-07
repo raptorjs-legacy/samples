@@ -2,9 +2,14 @@
     "raptor": {
         "dependencies": [
             {"module": "raptor/widgets"},
+            {"module": "raptor/renderer"},
+            {"module": "raptor/templating"},
+            {"module": "raptor/templating/taglibs/widgets"},
             {"module": "ui/demo/ColorChangeButton"},
+            {"module": "ui/demo/Button"},
             "WidgetsDemoWidget.js",
-            "WidgetsDemo.css"
+            "WidgetsDemo.css",
+            "widgets-test.rhtml"
         ]
     }
 }

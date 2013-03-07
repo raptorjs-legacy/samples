@@ -7,6 +7,7 @@ define(
                 cyanMagentaYellowButton = this.widgets.cyanMagentaYellowButton,
                 repeatedButtons = this.widgets.repeatedButtons;
 
+
             this.$("#changeColorsButton").click(function() {
                 redGreenBlueButton.nextColor();
                 cyanMagentaYellowButton.nextColor();
@@ -14,6 +15,12 @@ define(
                     curButton.nextColor();
                 });
             });
+
+            this.$("#renderTemplateButton").click(function() {
+                require('raptor/renderer')
+                    .renderTemplate('widgets-test')
+                    .appendTo(this.getEl('renderTarget'));
+            }.bind(this));
         };
         
         WidgetsDemoWidget.prototype = {
