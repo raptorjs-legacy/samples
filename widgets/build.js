@@ -10,7 +10,6 @@ require('raptor/optimizer').configure(
         profile: process.argv[2] === 'dev' ? 'development' : 'production'
     });
 
-resources.addSearchPathDir(__dirname);
 resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 
 //require('raptor/templating/compiler').setWorkDir(files.joinPaths(__dirname, "work"));
@@ -18,7 +17,7 @@ resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 var pageOutputPath = files.joinPaths(__dirname, 'build/index.html');
 try
 {
-    templating.renderToFile("/index.rhtml", pageOutputPath);    
+    templating.renderToFile("/pages/index.rhtml", pageOutputPath);    
 }
 catch(e) {
     require('raptor/logging').logger('build').error(e);
