@@ -31,6 +31,7 @@
         <delete includeEmptyDirs="true" removeNotFollowedSymlinks="true" failonerror="false">
             <fileset dir="node_modules" followsymlinks="false"/>
         	<fileset dir="build"/>
+        	<fileset dir="work"/>
         </delete>
     </target>
     
