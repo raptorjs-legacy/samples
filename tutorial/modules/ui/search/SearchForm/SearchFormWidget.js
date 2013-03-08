@@ -1,51 +1,67 @@
 define.Class(
     "ui/search/SearchForm/SearchFormWidget",
-    function(require) {
+    function(require, exports, module) {
         var pubsub = require('raptor/pubsub'),
-            ebayFinding = require('ebay-api/finding');
+            ebayFinding = require('ebay-api/finding'),
+            logger = module.logger();
 
         return {
             init: function(widgetConfig) {
-                var _this = this;
 
-                this.$().submit(function() {
+                $(this.getEl()).submit(function() {
                     try
                     {
-                        _this._handleSubmit();    
+                        this._handleSubmit();    
                     }
                     catch(e) {
-                        console.error(e);
+                        logger.error(e);
                     }
                     return false;
-                });
+                }.bind(this));
+
+                // NOTE: The following are equivalent:
+                // $(this.getEl())
+                // this.$()
 
             },
 
             _handleSubmit: function() {
                 
-                
+                // Use the "ebay-api/finding" API to perform the search
+                // and get back a [jQuery] promise
                 var promise = ebayFinding.performSearch({
                         keywords: this.getKeywords(),
                         categoryId: parseInt(this.getCategoryId())
                     });
 
-                var async = promise.state() === 'pending';
-                if (async) {
+                // If the search was asynchronous (not cached)
+                // then publish a "searchBegin" message
+                // to trigger a loading indicator:
+                var isAsync = promise.state() === 'pending';
+                if (isAsync) {
                     pubsub.publish("searchBegin");
                 }
                 
                 promise
                     .done(function(data) {
+                        // When the search results come back 
+                        // publish a "searchResults" message
+                        // so that some other widget
+                        // on the page can display the search
+                        // results:
                         pubsub.publish("searchResults", {
-                            data: data
+                            data: data // Pass along the data as part of the message
                         });
+
+                        // Hide the wait indicator by publishing a "searchEnd" message
                         pubsub.publish("searchEnd");
                     })
                     .fail(function(request, status, errorThrown) {
-                        console.error('ERROR: ', errorThrown);  
+                        logger.error('ERROR: ', errorThrown);  
                     })
                     .always(function() {
-                        if (async) {
+                        // Make sure we always hide the wait indicator:
+                        if (isAsync) { // Only publish a "searchEnd" if we published a "searchBegin"
                             pubsub.publish("searchEnd");    
                         }
                     });

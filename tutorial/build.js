@@ -14,6 +14,6 @@ resources.addSearchPathDir(__dirname);
 resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 
 var pageOutputPath = files.joinPaths(__dirname, 'build/index.html');
-templating.renderToFile("/index.rhtml", pageOutputPath);
+templating.renderToFile("/modules/pages/index/index.rhtml", pageOutputPath);
 
 console.log('Published page: ' + pageOutputPath);
