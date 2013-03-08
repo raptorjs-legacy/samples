@@ -4,14 +4,14 @@ RaptorJS Sample: UI Components
 This sample application demonstrates a recipe for building UI components that are 
 independently testable and can be rendered on the server or in the browser.
 
-For this guide, the following technologies will be used:
+For this sample app, the following technologies will be used:
 * [jQuery](http://jquery.com/): Client-side DOM management and DOM event handling
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/): Underlying UI component implementations
 * [RaptorJS Widget Framework](http://raptorjs.org/widgets/): Client-side widget initialization and widget communication
 * [Raptor Templates](http://raptorjs.org/raptor-templates/): HTML templating language for rendering UI component views
 * [RaptorJS Packaging](http://raptorjs.org/packaging/): Declaring UI component dependencies
 * [RaptorJS Optimizer](http://raptorjs.org/optimizer/): Delivering JavaScript and CSS code to the browser
-* [RaptorJS AMD](http://raptorjs.org/modules-classes/): Modules, classes and mixins
+* [RaptorJS AMD](http://raptorjs.org/modules-classes/): Defining modules, classes and mixins
 
 [View Demo](http://raptorjs.org/demos/ui-components/)
 
