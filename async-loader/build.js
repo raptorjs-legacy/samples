@@ -5,7 +5,7 @@ require('raptor');
 require('raptor/logging').configure({
     loggers: {
         'ROOT': {level: 'WARN'},
-        'optimizer': {level: 'INFO'}
+        'raptor/optimizer': {level: 'INFO'}
     }
 });
 
