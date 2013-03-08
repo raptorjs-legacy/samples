@@ -5,6 +5,7 @@
         <ant dir="optimizer-cli"/>
         <ant dir="optimizer-javascript-api"/>
         <ant dir="optimizer-raptor-templates"/>
+        <!-- <ant dir="todomvc"/> -->
         <ant dir="tutorial"/>
         <ant dir="ui-components"/>
         <ant dir="widgets"/>
@@ -15,6 +16,7 @@
         <ant dir="optimizer-cli" target="clean"/>
         <ant dir="optimizer-javascript-api" target="clean"/>
         <ant dir="optimizer-raptor-templates" target="clean"/>
+        <!-- <ant dir="todomvc" target="clean"/> -->
         <ant dir="tutorial" target="clean"/>
         <ant dir="ui-components" target="clean"/>
         <ant dir="widgets" target="clean"/>
