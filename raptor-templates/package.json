@@ -1,0 +1,16 @@
+{
+    "name": "raptorjs-sample-raptor-templates",
+    "version": "0.0.0",
+    "description": "RaptorJS Sample: Raptor Templates",
+    "repository": "",
+    "author": "",
+    "license": "BSD",
+    "dependencies": {
+        "raptor": ">=2.2.8"
+    },
+    "raptor": {
+        "taglibs": [
+            "/taglibs/app/app.rtld"
+        ]
+    }
+}

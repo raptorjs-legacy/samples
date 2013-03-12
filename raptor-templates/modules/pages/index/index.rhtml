@@ -1,0 +1,65 @@
+<c:template
+    xmlns:c="core"
+    xmlns:html="html"
+    xmlns:optimizer="optimizer"
+    xmlns:w="widgets"
+    xmlns:app="app"
+    params="name,count"
+    app:import-functions="upperCase,reverse">
+
+    <optimizer:page name="index" base-path="build">
+        <dependencies>
+            <module name="raptor"/>
+            <module name="raptor/templating"/>
+            <module name="raptor/renderer"/>
+            <js path="index.js"/>
+            <rhtml path="/templates/colors.rhtml"/>
+        </dependencies>
+    </optimizer:page>    
+
+    <html html:doctype="html">
+        <head>
+            <title>Raptor Templates Demo | RaptorJS</title>
+            <optimizer:slot name="head"/>
+            
+        </head>
+        <body>
+            
+            <p>
+                Hello $name! You have $count new messages.
+            </p>
+            <p>
+                <app:hello name="Frank" count="15"/>
+            </p>
+            <p>
+                <app:hello name="Jane" count="50"/>
+            </p>
+
+            <c:include template="/templates/colors.rhtml" colors="${['red', 'green', 'blue']}"/>
+
+            <p>
+                Hello ${reverse(upperCase(name))}!
+            </p>
+            <fieldset>
+                <label>Client-side Rendering</label>
+                <p>
+                    <button type="button" onclick="renderTemplate()">
+                        Render (innerHTML)
+                    </button>
+                    <button type="button" onclick="renderTemplateAppendTo()">
+                        Render (append)
+                    </button>
+                </p>
+                
+                <div id="renderTarget">
+                    
+                </div>
+            </fieldset>
+
+            
+            <optimizer:slot name="body"/>
+            
+        </body>
+    </html>
+</c:template>
+

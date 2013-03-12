@@ -1,0 +1,13 @@
+
+<raptor-taglib>
+    <uri>app</uri>
+
+    <function class="taglibs/app/AppFunctions" name="upperCase"/>
+    <function class="taglibs/app/AppFunctions" name="reverse"/>
+
+    <tag name="hello" renderer="taglibs/app/HelloTag">
+        <attribute name="name"/>
+        <attribute name="count" type="integer"/>
+    </tag>
+    
+</raptor-taglib>
