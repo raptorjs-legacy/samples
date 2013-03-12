@@ -6,26 +6,25 @@ define.Class(
     function(raptor, pubsub, require) {
 
         var ENTER_KEY = 13,
-            componentRenderer = require('raptor/component-renderer'),
-            forEachEntry = raptor.forEachEntry,
-            newTodo = $('#new-todo'),
-            taskList = $('#todo-list');
+            componentRenderer = require('raptor/renderer'),
+            forEachEntry = raptor.forEachEntry;
 
         return {
             init: function(){
                 var self = this;
-                newTodo.on('keypress', $.proxy(self.onKeyPress, self));
-                pubsub.subscribe('TaskContainer/taskAdded', $.proxy(self.onTaskAdded, self));
+                self.$newTodo = $(this.getEl('new-todo'));
+                self.$newTodo.on('keypress', self.onKeyPress.bind(self));
+                pubsub.subscribe('todomvc/task-added',  self.onTaskAdded.bind(self));
             },
 
             onKeyPress: function(ev){
                 if ( ev.which === ENTER_KEY ) {
-                    pubsub.publish('CreateTask/newTaskAdded', {task: newTodo.val()});
+                    pubsub.publish('todomvc/add-new-task', {task: this.$newTodo.val()});
                 }
             },
 
             onTaskAdded: function(){
-                newTodo.val("");
+                this.$newTodo.val("");
             }
         }
     }

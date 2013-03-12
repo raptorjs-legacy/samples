@@ -1,6 +1,7 @@
 {
     "raptor": {
         "dependencies": [
+            "Footer.css",
             "FooterWidget.js"
         ]
     }

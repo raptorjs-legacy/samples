@@ -5,7 +5,7 @@ define.Class(
     ['raptor', 'raptor/pubsub'],
     function(raptor, pubsub, require) {
 
-        var componentRenderer = require('raptor/component-renderer'),
+        var componentRenderer = require('raptor/renderer'),
             store = require('store/TodoStore').getInstance(),
             todoTask = require('ui/Task/TaskWidget'),
             tasks = {},
@@ -14,13 +14,14 @@ define.Class(
         return {
             init: function(){
                 var self = this;
-                self.mainContainer = $(self.getEl());
+                self.$mainContainer = $(self.getEl());
+                self.$tasksList = $(this.getEl('todo-list'));
 
-                pubsub.subscribe('CreateTask/newTaskAdded', self.addNewTask, self);
-                pubsub.subscribe('Task/toggled', self.refresh, self);
-                pubsub.subscribe('Task/destroyed', self.removeTask, self);
-                pubsub.subscribe('AppWidget/filter', self.filter, self);
-                pubsub.subscribe('Footer/initialized', self.setTasksFromStore, self);
+                pubsub.subscribe('todomvc/add-new-task', self.addNewTask, self);
+                pubsub.subscribe('todomvc/task-toggled', self.refresh, self);
+                pubsub.subscribe('todomvc/task-destroyed', self.removeTask, self);
+                pubsub.subscribe('todomvc/filter', self.filter, self);
+                pubsub.subscribe('todomvc/footer-initialized', self.setTasksFromStore, self);
             },
 
             // Set the initial workspace with all the tasks from local store
@@ -38,13 +39,13 @@ define.Class(
                         task: eventArgs.task,
                         model: eventArgs.model
                     })
-                    .appendTo('todo-list')
+                    .appendTo(self.$tasksList[0])
                     .getWidget();
 
                 
                 tasks[taskWidget.model.id] = taskWidget;
                 
-                pubsub.publish('TaskContainer/taskAdded');
+                pubsub.publish('todomvc/task-added');
                 self.refresh();
             },
 
@@ -57,7 +58,7 @@ define.Class(
                 var self = this, status = self.tasksStatusCount(), 
                     todo = status.todo,  completed = status.completed,
                     show = (todo + completed) > 0,
-                    main = self.mainContainer;
+                    main = self.$mainContainer;
 
                 if (show){
                     main.show();
@@ -65,7 +66,7 @@ define.Class(
                     main.hide();
                 }
 
-                pubsub.publish('TaskContainer/containerRefreshed', {todo: todo, completed: completed});
+                pubsub.publish('todomvc/container-refreshed', {todo: todo, completed: completed});
             },
 
             // return of  count of todo and coompleted tasks

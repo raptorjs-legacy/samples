@@ -13,19 +13,19 @@ define.Class(
 
             init: function(widgetConfig){
                 var self = this, c = widgetConfig,
-                    list = self.list = $(self.getEl());
+                    list = self.list = self.$();;
 
                 self.model = c.model;
 
                 self.editElem = $('input.edit', list);
                 self.taskLabel = $('[data-title]', list);
 
-                list.on('click', 'input.toggle', $.proxy(self.toggle, self));
-                list.on('dblclick', '[data-title]', $.proxy(self.edit, self));
-                list.on('keypress', 'input.edit', $.proxy(self.update, self));
-                list.on('click', '[data-destroy]', $.proxy(self.destroy, self));
+                list.on('click', 'input.toggle', self.toggle.bind(self));
+                list.on('dblclick', '[data-title]', self.edit.bind(self));
+                list.on('keypress', 'input.edit', self.update.bind(self));
+                list.on('click', '[data-destroy]', self.destroy.bind(self));
 
-                pubsub.subscribe('Footer/clearCompletedTasks', self.clearCompleted, self);
+                pubsub.subscribe('todomvc/clear-completed-tasks', self.clearCompleted, self);
             },
 
             /** on click of checkbox, toggle completed/not done**/
@@ -33,7 +33,7 @@ define.Class(
                 var self = this;
                 self.list.toggleClass('completed');
                 self.model = store.update({id: self.model.id, title: self.model.title, completed: self.list.hasClass('completed')});
-                pubsub.publish('Task/toggled');
+                pubsub.publish('todomvc/task-toggled');
             },
 
             /** Edit the current task **/
@@ -58,7 +58,7 @@ define.Class(
                 var self = this, taskId = self.model.id;
                 self.model = store.remove(self.model);
                 self.list.remove();
-                pubsub.publish('Task/destroyed', {taskId: taskId});
+                pubsub.publish('todomvc/task-destroyed', {taskId: taskId});
             },
 
             clearCompleted: function(){

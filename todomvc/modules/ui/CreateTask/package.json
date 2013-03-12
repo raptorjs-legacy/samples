@@ -1,6 +1,7 @@
 {
     "raptor": {
         "dependencies": [
+            "CreateTask.css",
             "CreateTaskWidget.js"
         ]
     }

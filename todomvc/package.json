@@ -1,6 +1,6 @@
 {
-    "name": "TODO App",
-    "version": "1.0",
+    "name": "raptorjs-sample-todomvc",
+    "version": "1.0.0",
     "description": "Raptor JS Samples: TODO Application",
     "homepage": "http://wiki2.arch.ebay.com/display/RAPTOR/Home",
     "authors": [

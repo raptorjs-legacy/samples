@@ -1,6 +1,7 @@
 {
     "raptor": {
         "dependencies": [
+            "TaskContainer.css",
             "TasksContainerWidget.js"
         ]
     }

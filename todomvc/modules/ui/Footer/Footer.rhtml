@@ -1,7 +1,7 @@
 <c:template xmlns:w="widgets" xmlns:c="core">
-    <footer id="footer" w:widget="ui/Footer/FooterWidget">
-        <span id="todo-count"><strong id="todo-count-num"></strong> item left</span>
-        <ul id="filters">
+    <footer class="footer" w:widget="ui/Footer/FooterWidget">
+        <span class="todo-count"><strong w:el-id="todo-count-num"></strong> item left</span>
+        <ul w:el-id="filters" class="filters">
             <li>
                 <a class="selected" href="#/">All</a>
             </li>
@@ -12,6 +12,6 @@
                 <a href="#/completed">Completed</a>
             </li>
         </ul>
-        <button id="clear-completed">Clear completed (<span id="completed-count"></span>)</button>
+        <button w:el-id="clear-completed" class="clear-completed">Clear completed (<span w:el-id="completed-count"></span>)</button>
     </footer>
 </c:template>

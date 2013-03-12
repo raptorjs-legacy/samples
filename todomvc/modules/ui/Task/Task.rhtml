@@ -4,7 +4,7 @@
     xmlns:w="widgets"
     params="rowId,title,checked">
 
-    <li id="row_$rowId" rowId="$rowId" class="{?checked;completed}" w:widget="ui/Task/TaskWidget">
+    <li rowId="$rowId" class="{?checked;completed}" w:widget="ui/Task/TaskWidget">
         <div class="view">
             <input class="toggle" type="checkbox" checked="{?checked;checked}" />
             <label data-title="title">$title</label>

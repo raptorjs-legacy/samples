@@ -1,55 +1,55 @@
-'use strict';
-
 define.Class(
     "ui/Footer/FooterWidget",
     ['raptor', 'raptor/pubsub'],
     function(raptor, pubsub, require) {
+        'use strict';
 
-        var componentRenderer = require('raptor/component-renderer'),
-            forEachEntry = raptor.forEachEntry,
-            footer = $('#footer'),
-            footerLinks = $('#filters a'),
-            todoCount = $('#todo-count-num'),
-            completedCount = $('#completed-count'),
-            completedBtn = $('#clear-completed');
+        var componentRenderer = require('raptor/renderer'),
+            forEachEntry = raptor.forEachEntry;
 
         return {
             init: function(){
                 var self = this;
+
+                self.$footer = this.$();
+                self.$footerLinks = self.$footer.find("a");
+                self.$todoCount = $(this.getEl('todo-count-num'));
+                self.$completedCount  = $(this.getEl('completed-count'));
+                self.$completedBtn = $(this.getEl('clear-completed'));
                 
-                completedBtn.on('click', function(){
-                    pubsub.publish('Footer/clearCompletedTasks');
+                self.$completedBtn.on('click', function(){
+                    pubsub.publish('todomvc/clear-completed-tasks');
                 });
 
-                pubsub.subscribe('TaskContainer/containerRefreshed', self.refresh, self);
-                pubsub.subscribe('AppWidget/filter', self.setActive, self);
-                pubsub.publish('Footer/initialized');
+                pubsub.subscribe('todomvc/container-refreshed', self.refresh, self);
+                pubsub.subscribe('todomvc/filter', self.setActive, self);
+                pubsub.publish('todomvc/footer-initialized');
             },
 
             refresh: function(data){
-                var todo = data.todo, completed = data.completed,
+                var self = this, todo = data.todo, completed = data.completed,
                     show = (todo + completed) > 0;
 
                 if (show){
-                    footer.show();
+                    self.$footer.show();
                 } else {
-                    footer.hide();
+                    self.$footer.hide();
                 }
 
-                todoCount.html(todo);
-                completedCount.html(completed);
+                self.$todoCount.html(todo);
+                self.$completedCount.html(completed);
 
                 if (completed > 0){
-                    completedBtn.show();
+                    self.$completedBtn.show();
                 } else {
-                    completedBtn.hide();
+                    self.$completedBtn.hide();
                 }
             },
 
-            setActive: function(){
-                footerLinks
+            setActive: function(input){
+                this.$footerLinks
                     .removeClass('selected')
-                    .filter( '[href="#/' + (param || '') + '"]' )
+                    .filter( '[href="#/' + (input.view || '') + '"]' )
                     .addClass('selected');
             }
             

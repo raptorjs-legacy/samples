@@ -18,7 +18,7 @@ define.Class(
             },
 
             filter: function(param){
-                pubsub.publish('AppWidget/filter', {view: param || 'all'});
+                pubsub.publish('todomvc/filter', {view: param || 'all'});
             }
         };
     }
