@@ -6,7 +6,7 @@
     "author": "",
     "license": "BSD",
     "dependencies": {
-        "raptor": ">=2.2.8"
+        "raptor": ">=2.2.12"
     },
     "raptor": {
         "taglibs": [
