@@ -1,0 +1,8 @@
+{
+    "raptor": {
+        "dependencies": [
+            "director-1.1.6.min.js"
+        ]
+        
+    }   
+}
