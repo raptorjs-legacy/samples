@@ -19,19 +19,17 @@
     <profile name="production">
         <checksums-enabled>true</checksums-enabled>
         <enabled-extensions>jquery,browser,production</enabled-extensions>
-        <bundling-enabled>false</bundling-enabled>
+        <bundling-enabled>true</bundling-enabled>
         <resolve-css-urls>true</resolve-css-urls>
         <in-place-deployment-enabled>false</in-place-deployment-enabled>
-        <minify-js>false</minify-js>
-        <minify-css>false</minify-css>
+        <minify-js>true</minify-js>
+        <minify-css>true</minify-css>
     </profile>
     
     <output-dir>build/static</output-dir>
 
     <bundles name="default">
-        <bundle name="bootstrap">
-            <module name="bootstrap"/>
-        </bundle>
+        
     </bundles>
     
 </optimizer-config>
