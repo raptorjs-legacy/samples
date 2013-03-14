@@ -39,7 +39,8 @@ ul.tasks li.editing .view {
 ul.tasks li .toggle {
     text-align: center;
     width: 40px;
-    height: 40px;
+    /* auto, since non-WebKit browsers doesn't support input styling */
+    height: auto;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -53,7 +54,6 @@ ul.tasks li .toggle {
 }
 
 ul.tasks li .toggle:after {
-    font-size: 18px;
     content: '✔';
     line-height: 43px; /* 40 + a couple of pixels visual adjustment */
     font-size: 20px;

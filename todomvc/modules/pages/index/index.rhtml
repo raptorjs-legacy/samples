@@ -30,15 +30,21 @@
     <html html:doctype="html">
         <head>
             <title>RaptorJS • TodoMVC</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
             <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
             <optimizer:slot name="head"/>
         </head>
         <body>
-            <section id="todoapp" w:widget="ui/App/AppWidget">
-                <app:create-task />
-                <app:tasks-container />
-                <app:footer />
-            </section>
+            <div id="todoapp" w:widget="ui/App/AppWidget">
+                <header id="header">
+                    <h1>todos</h1>
+                </header>
+                <div id="todos">
+                    <app:create-task />
+                    <app:tasks-container />
+                    <app:footer />
+                </div>
+            </div>
 
             <div id="info">
                 <p>Double-click to edit a todo</p>
