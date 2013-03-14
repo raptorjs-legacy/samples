@@ -16,8 +16,8 @@ applications are described below:
 * [optimizer-raptor-templates](https://github.com/raptorjs/samples/tree/master/optimizer-raptor-templates): 
   Demonstrates using the [Optimizer Taglib](http://raptorjs.org/optimizer/get-started-raptor-templates/) for [Raptor Templates](http://raptorjs.org/raptor-templates/)
   ([view demo](http://raptorjs.org/demos/optimizer-raptor-templates))
-* [todombc](https://github.com/raptorjs/samples/tree/master/todomvc): 
-  Sample RaptorJS application based on the for the open source [TodoMVC](http://addyosmani.github.com/todomvc/) project by [Addy Osmani](https://github.com/addyosmani) and [Sindre Sorhus](https://github.com/sindresorhus)
+* [todomvc](https://github.com/raptorjs/samples/tree/master/todomvc): 
+  Sample RaptorJS app based on the open source [TodoMVC](http://addyosmani.github.com/todomvc/) project by [Addy Osmani](https://github.com/addyosmani) and [Sindre Sorhus](https://github.com/sindresorhus)
   ([view demo](http://raptorjs.org/demos/todomvc/))
 * [tutorial](https://github.com/raptorjs/samples/tree/master/tutorial): 
   Sample application for the [RaptorJS Tutorial](http://raptorjs.org/tutorial/) that ties everything together
