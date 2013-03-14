@@ -2,7 +2,7 @@ RaptorJS Sample Applications
 ============================
 
 Each sub-directory in this Git repository contains the source code
-for a sample application built using the RaptorJS toolset. The sample
+for a sample application built using the RaptorJS toolkit. The sample
 applications are described below:
 * [async-loader](https://github.com/raptorjs/samples/tree/master/async-loader): 
   Demonstrates asynchronous package loading using the [RaptorJS Module Loader](http://raptorjs.org/module-loader/)
