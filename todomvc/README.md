@@ -2,7 +2,7 @@ RaptorJS Sample: TodoMVC
 ========================
 
 This sample application demonstrates how a simple application can be built using 
-RaptorJS. For this sample, the TodoMVC application from the open source [TodoMVC](http://addyosmani.github.com/todomvc/) project
+RaptorJS. For this sample, the TodoMVC application from the [open source TodoMVC project](http://addyosmani.github.com/todomvc/)
 was adapted to use some of the design patterns and technologies provided by the RaptorJS toolkit.
 
 
