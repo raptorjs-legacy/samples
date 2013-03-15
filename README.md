@@ -23,7 +23,7 @@ applications are described below:
   Sample application for the [RaptorJS Tutorial](http://raptorjs.org/tutorial/) that ties everything together
   ([view demo](http://raptorjs.org/demos/tutorial/))
 * [ui-components](https://github.com/raptorjs/samples/tree/master/ui-components): 
-  Demonstrates building [UI components](http://raptorjs.org/ui-components/) using the RaptorJS Toolset
+  Demonstrates building [UI components](http://raptorjs.org/ui-components/) using the RaptorJS Toolkit
   ([view demo](http://raptorjs.org/demos/ui-components/))
 * [widgets](https://github.com/raptorjs/samples/tree/master/widgets):
   Demonstrates using the [RaptorJS Widget Framework](http://raptorjs.org/widgets/) using the RaptorJS Widget Framework
