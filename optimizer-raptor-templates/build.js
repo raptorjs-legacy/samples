@@ -28,14 +28,23 @@ optimizer.configure(
 // path so that the modules can be found
 resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 
+function onError(e) {
+    logger.error(e);
+}
+
 try
 {
-    templating.renderToFile("/pages/index/index.rhtml", outputFile);
+    templating.renderToFile("/pages/index/index.rhtml", outputFile)
+        .then(
+            function() {
+                console.log('Optimized HTML page written to disk:\n' + 
+                    outputFile.getAbsolutePath());
+            },
+            onError);
 
-    console.log('Optimized HTML page written to disk:\n' + 
-        outputFile.getAbsolutePath());
+
 }
 catch(e) {
-    logger.error(e);
+    onError(e);
 }
 

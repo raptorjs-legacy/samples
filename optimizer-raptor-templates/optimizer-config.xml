@@ -4,7 +4,7 @@
         <profile>production</profile>
     </params>
     
-    <enable-profile>${profile}</enable-profile>
+    <enable-profile>production</enable-profile>
     
     <profile name="development">
         <enabled-extensions>browser,raptor/logging/console,development</enabled-extensions>
@@ -21,21 +21,25 @@
         <bundling-enabled>true</bundling-enabled>
         <resolve-css-urls>true</resolve-css-urls>
         <in-place-deployment-enabled>false</in-place-deployment-enabled>
-        <minify-js>true</minify-js>
-        <minify-css>true</minify-css>
+        <minify-js>false</minify-js>
+        <minify-css>false</minify-css>
     </profile>
     
     <output-dir>build/static</output-dir>
 
     <bundles>
         <!-- Configure two resource bundles for our application -->
+        <bundle name="core">
+            <module name="raptor" recursive="true"/>
+            <module name="raptor/loader" recursive="true"/>
+        </bundle>
         <bundle name="bundle1">
-            <module name="module-a"/>
-            <module name="module-b"/>
+            <module name="module-a" recursive="true"/>
+            <module name="module-b" recursive="true"/>
         </bundle>
         <bundle name="bundle2">
-            <module name="module-b"/>
-            <module name="module-c"/>
+            <module name="module-c" recursive="true"/>
+            <module name="module-d" recursive="true"/>
         </bundle>
     </bundles>
     
