@@ -1,3 +1,5 @@
+#!/bin/sh
+
 npm install &&
 rm -rf build &&
 raptor-optimizer \
