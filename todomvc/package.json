@@ -9,7 +9,9 @@
             "email": "nkhanna@ebay.com"
         }
     ],
-    
+    "dependencies": {
+        "raptor": ">=2.3.17"
+    },
     "raptor": {
         "search-path": [
             {"dir": "modules"}

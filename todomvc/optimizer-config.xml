@@ -41,23 +41,23 @@
 
     <bundles name="default">
 
-        <bundle name="raptor">
+        <bundle name="core">
             <module name="raptor" recursive="true"/>
-            <module name="thirdparty" />
-            
             <module name="raptor/listeners" recursive="true"/>
             <module name="raptor/pubsub" />
         </bundle>
+
+        <bundle name="thirdparty">
+            <module name="thirdparty/jquery" />
+            <module name="thirdparty/director" />
+        </bundle>
+
         <bundle name="widgets">
             <module name="raptor/widgets" recursive="true"/>
         </bundle>
         
         <bundle name="templating">
             <module name="raptor/templating" recursive="true"/>
-        </bundle>
-        
-        <bundle name="templating-compiler">
-            <module name="raptor/templating/compiler" recursive="true"/>
         </bundle>
     </bundles>
     
