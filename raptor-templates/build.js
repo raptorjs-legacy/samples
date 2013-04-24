@@ -23,10 +23,13 @@ function onError(e) {
 
 try
 {
-    templating.renderToFile("/pages/index/index.rhtml", pageOutputPath, {
+    templating.renderToFile(
+        "/pages/index/index.rhtml", 
+        {
             name: 'John',
             count: 30
-        })
+        },
+        pageOutputPath)
         .then(
             function() {
                 console.log('Published page: ' + pageOutputPath);

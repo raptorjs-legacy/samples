@@ -21,7 +21,7 @@ function onError(e) {
 
 try
 {
-    templating.renderToFile("/pages/index/index.rhtml", pageOutputPath)
+    templating.renderToFile("/pages/index/index.rhtml", {}, pageOutputPath)
         .then(
             function() {
                 console.log('Published page: ' + pageOutputPath);

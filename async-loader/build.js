@@ -39,9 +39,10 @@ try
     resources.addSearchPathDir(__dirname);
     resources.addSearchPathDir(require('path').join(__dirname, 'modules'));
 
-    templating.renderToFile('/pages/index/index.rhtml', outputFile, {
+    templating.renderToFile('/pages/index/index.rhtml', {
             outputDir: files.joinPaths(__dirname, '/build')
-        })
+        },
+        outputFile)
         .then(
             function() {
                 console.log('Published page: ' + outputFile.getAbsolutePath());            

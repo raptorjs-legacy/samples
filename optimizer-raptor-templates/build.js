@@ -34,7 +34,7 @@ function onError(e) {
 
 try
 {
-    templating.renderToFile("/pages/index/index.rhtml", outputFile)
+    templating.renderToFile("/pages/index/index.rhtml", {}, outputFile)
         .then(
             function() {
                 console.log('Optimized HTML page written to disk:\n' + 
