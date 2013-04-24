@@ -16,6 +16,10 @@ var files = require('raptor/files'),
 require('raptor/resources').addSearchPathDir(
     require('path').join(__dirname, 'modules'));
 
+function onError(e) {
+    require('raptor/logging').logger('build').error(e);
+}
+
 try
 {
     // Configure the default instance of the RaptorJS Optimizer:
@@ -26,7 +30,7 @@ try
         });
 
     // Optimize the page to produce the optimized resource bundles:
-    var optimizedPage = optimizer.optimizePage({
+    var optimizedPagePromise = optimizer.optimizePage({
         name: 'index', // Used to name optimized resource bundles
         module: 'pages/index', // Use the dependencies defined in the package.json file
                                // associated with the 'pages/index' module
@@ -37,23 +41,29 @@ try
         enabledExtensions: ['browser', 'raptor/logging/console'] // Enable package extensions
     });
 
-    // Use information from the optimized page to update the static HTML file 
-    // with the required markup:
-    var pageHtml = files.readAsString("modules/pages/index/index.html");
-    var outputHtml = pageHtml.replace(
-        /<!--\s*slot: ([\w]*)\s*-->/g, // Use a regular expression to find slots 
-                                       // in the HTML markup
-        function(matches, slotName) {
-            return optimizedPage.getHtmlForSlot(slotName);
-        });
+    optimizedPagePromise.then(
+        function(optimizedPage) {
+            // Use information from the optimized page to update the static HTML file 
+            // with the required markup:
+            var pageHtml = files.readAsString("modules/pages/index/index.html");
+            var outputHtml = pageHtml.replace(
+                /<!--\s*slot: ([\w]*)\s*-->/g, // Use a regular expression to find slots 
+                                               // in the HTML markup
+                function(matches, slotName) {
+                    return optimizedPage.getHtmlForSlot(slotName);
+                });
 
-    // Write the resulting HTML to a new file:
-    var outputFile = new File(__dirname + "/build/index.html");
-    outputFile.writeAsString(outputHtml);
-    console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());
+            // Write the resulting HTML to a new file:
+            var outputFile = new File(__dirname + "/build/index.html");
+            outputFile.writeAsString(outputHtml);
+            console.log('Optimized HTML page written to disk:\n' + outputFile.getAbsolutePath());
+        },
+        onError);
+
+        
 }
 catch(e) {
-    require('raptor/logging').logger('build').error(e);
+    onError(e);
 }
 
 
