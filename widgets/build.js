@@ -13,16 +13,23 @@ require('raptor/optimizer').configure(
 resources.addSearchPathDir(__dirname);
 resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 
-//require('raptor/templating/compiler').setWorkDir(files.joinPaths(__dirname, "work"));
+require('raptor/templating/compiler').setWorkDir(files.joinPaths(__dirname, "work"));
 
 var pageOutputPath = files.joinPaths(__dirname, 'build/index.html');
-try
-{
-    templating.renderToFile("/pages/index/index.rhtml", pageOutputPath);    
-}
-catch(e) {
+
+function onError(e) {
     require('raptor/logging').logger('build').error(e);
 }
 
-
-console.log('Published page: ' + pageOutputPath);
+try
+{
+    templating.renderToFile("/pages/index/index.rhtml", pageOutputPath)
+        .then(
+            function() {
+                console.log('Published page: ' + pageOutputPath);
+            },
+            onError);
+}
+catch(e) {
+    onError(e);
+}
