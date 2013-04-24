@@ -1,0 +1,121 @@
+{
+    "build_systems":
+    [
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "async-loader",
+            "working_dir": "${project_path}/async-loader"
+        },
+        {
+            "cmd":
+            [
+                "${project_path}/optimizer-cli/run-optimizer.sh"
+            ],
+            "name": "optimizer-cli",
+            "working_dir": "${project_path}/optimizer-cli"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "optimizer-javascript-api",
+            "working_dir": "${project_path}/optimizer-javascript-api"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "optimizer-raptor-templates",
+            "working_dir": "${project_path}/optimizer-raptor-templates"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "packaging",
+            "working_dir": "${project_path}/packaging"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "raptor-templates",
+            "working_dir": "${project_path}/raptor-templates"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "todomvc",
+            "working_dir": "${project_path}/todomvc"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "tutorial",
+            "working_dir": "${project_path}/tutorial"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "ui-components",
+            "working_dir": "${project_path}/ui-components"
+        },
+        {
+            "cmd":
+            [
+                "node",
+                "build.js"
+            ],
+            "name": "widgets",
+            "working_dir": "${project_path}/widgets"
+        }
+    ],
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": ["node_modules"]
+        },
+        {
+            "path": "../raptorjs",
+            "folder_exclude_patterns": ["node_modules"]
+        }
+    ],
+    "settings":
+    {
+        "build_switcher_systems":
+        [
+            "async-loader",
+            "optimizer-cli",
+            "optimizer-javascript-api",
+            "optimizer-raptor-templates",
+            "packaging",
+            "raptor-templates",
+            "todomvc",
+            "tutorial",
+            "ui-components",
+            "widgets"
+        ]
+    }
+}
