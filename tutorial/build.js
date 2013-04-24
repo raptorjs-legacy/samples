@@ -14,6 +14,20 @@ resources.addSearchPathDir(__dirname);
 resources.addSearchPathDir(files.joinPaths(__dirname, 'modules'));
 
 var pageOutputPath = files.joinPaths(__dirname, 'build/index.html');
-templating.renderToFile("/modules/pages/index/index.rhtml", pageOutputPath);
 
-console.log('Published page: ' + pageOutputPath);
+function onError(e) {
+    require('raptor/logging').logger('build').error(e);
+}
+
+try
+{
+    templating.renderToFile("/modules/pages/index/index.rhtml", pageOutputPath)
+        .then(
+            function() {
+                console.log('Published page: ' + pageOutputPath);
+            },
+            onError);
+}
+catch(e) {
+    onError(e);
+}
