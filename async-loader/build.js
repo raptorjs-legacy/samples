@@ -20,6 +20,10 @@ require('raptor/optimizer').configure(
         profile: process.argv[2] === 'dev' ? 'development' : 'production'
     });
 
+function onError(e) {
+    require('raptor/logging').logger('build.js').error(e);
+}
+
 try
 {
     var outputFile = new File(require('path').join(__dirname, 'build/index.html'));
@@ -36,11 +40,16 @@ try
     resources.addSearchPathDir(require('path').join(__dirname, 'modules'));
 
     templating.renderToFile('/pages/index/index.rhtml', outputFile, {
-        outputDir: files.joinPaths(__dirname, '/build')
-    });
+            outputDir: files.joinPaths(__dirname, '/build')
+        })
+        .then(
+            function() {
+                console.log('Published page: ' + outputFile.getAbsolutePath());            
+            },
+            onError);
 
-    console.log('Published page: ' + outputFile.getAbsolutePath());
+    
 }
 catch(e) {
-    require('raptor/logging').logger('build.js').error(e);
+    onError(e);
 }
